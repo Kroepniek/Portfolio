@@ -1,6 +1,28 @@
+::-webkit-scrollbar 
+{
+  width: 5px;
+  background-color: #000;
+}
+ 
+::-webkit-scrollbar-thumb 
+{
+  background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+  background: #EFEFEF;
+}
+
+html 
+{
+    scroll-behavior: smooth;
+}  
+
 body
 {
-    background-color: #002424;
+    background-image: linear-gradient(#FFA17F, #002424);
+    background-repeat: no-repeat;
     margin: 0px;
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -8,10 +30,29 @@ body
 #container
 {
     position: relative;
-    top: 150px;
     display: block;
     margin: auto;
-    height: 450px;
-    width: 800px;
+    height: 6000px;
+    width: 100%;
     text-align: center;
+}
+
+#back-to-top
+{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    position: fixed;
+    top: 840px;
+    left: 94%;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 10px #002424;
+    transition-duration: 1000ms;
+    opacity: 0;
+}
+
+#name
+{
+    font-size: 40px;
+    font-family: 
 }
