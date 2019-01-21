@@ -29,7 +29,5 @@ function WriteName()
 
     
 }
-    
-window.onload = function() {
-    WriteName();
-};
+
+window.addEventListener('load', WriteName());
