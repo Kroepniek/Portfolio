@@ -5,7 +5,7 @@ function Scrolling()
 	if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500)
 	{
         scroll_button.style.opacity = "1";
-        scroll_button.setAttribute("href", "#container");
+        scroll_button.setAttribute("href", "#");
     } 
     else 
 	{

@@ -6,15 +6,27 @@ function WriteName()
 
     nameDiv.innerHTML = "";
 
-    for (var i = 0; i < text.length; i++)
+    var writing = setInterval(function() 
     {
-        setTimeout(function() {
-            //writenText = text.charAt(writenText.length);
-            alert(text.charAt(writenText.length));
-        }, (300));
-    }
+        writenText = writenText.substr(0, writenText.length-1);
+        writenText += text.charAt(writenText.length);
+        writenText += "_";
+        nameDiv.innerHTML = writenText;
 
-    nameDiv.innerHTML = writenText;
+        if (writenText.substr(0, writenText.length-1) == text)
+        {
+            clearInterval(writing);
+            setInterval(function()
+            {
+                var curText = nameDiv.innerHTML;
+                var newText = "";
+                newText = (curText.charAt(nameDiv.innerHTML.length-1) == "_" ? curText.substr(0, curText.length-1) : curText + "_");
+                nameDiv.innerHTML = newText;
+            }, 500);
+        }
+    }, 85);
+
+
     
 }
     
