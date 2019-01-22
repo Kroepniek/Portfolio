@@ -3,12 +3,33 @@ var cmd_input = cmd_input_div[0].getElementsByTagName('input');
 var writenPass = "";
 var pass = "";
 
+function SendRequest(prmtr, value, func)
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            func(this.responseText);
+        }
+     };
+    xmlhttp.open("POST", "getPass.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(prmtr + "=" + value);
+}
+
+function setPass(xhttp) 
+{
+    pass = xhttp;
+}
+
 function DisplayInput(state)
 {
     switch (state) {
         case true:
             cmd_input_div[0].style.display = "inline-block";
-            setTimeout(function(){cmd_input[0].style.boxShadow = "0px 0px 10px #000";}, 10);
+            setTimeout(function(){
+                cmd_input[0].style.boxShadow = "0px 0px 10px #000";
+                cmd_input[0].focus();
+            }, 10);
         break;
         case false:
             cmd_input[0].style.boxShadow = "none";
@@ -25,28 +46,20 @@ function CheckKeys(e)
     }
     else if (e.keyCode == 13)
     {
+        if (writenPass == "72736869")
+        {
+            DisplayInput(false);
+        }
+        else if (writenPass == "6568777378")
+        {
+            DisplayInput(true);
+        }
+
         writenPass = "";
     }
     else
     {
         writenPass += e.keyCode;
-
-        if (writenPass.length == 8)
-        {
-            if (writenPass == "72736869")
-            {
-                DisplayInput(false);
-                writenPass = "";
-            }
-        }
-        else if (writenPass.length >= 10)
-        {
-            if (writenPass == "6568777378")
-            {
-                DisplayInput(true);
-            }
-            writenPass = "";
-        }
     }
 }
 
@@ -65,7 +78,14 @@ function CheckPass(e)
                     cmd_input[0].type = "text";
                     cmd_input[0].value = "";
                     DisplayInput(false);
-                    console.log("logged out");
+                    SendRequest("adm", "false", function(){});
+                break;
+                case "admin.php":
+                    cmd_input[0].type = "text";
+                    cmd_input[0].value = "";
+                    var curUrl = window.location.href;
+                    curUrl = (curUrl.includes("index.php") ? curUrl.substr(0, curUrl.indexOf("index.php")) : curUrl);
+                    window.location.href = curUrl + "admin.php";
                 break;
             }
         }
@@ -73,7 +93,7 @@ function CheckPass(e)
         {
             if (cmd_input[0].value == pass)
             {
-                console.log("logged in");
+                SendRequest("adm", "true", function(){});
             }
 
             cmd_input[0].value = "";
@@ -82,14 +102,7 @@ function CheckPass(e)
     }
 }
 
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        pass = this.responseText;
-    }
-};
-xmlhttp.open("GET", "getPass.php", true);
-xmlhttp.send();
+SendRequest("q", "true", setPass);
 
 window.addEventListener('keydown', CheckKeys, false);
 cmd_input[0].addEventListener('keydown', CheckPass, false);

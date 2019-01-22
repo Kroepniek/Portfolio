@@ -1,0 +1,35 @@
+::-webkit-scrollbar { width: 5px; background-color: #000; }
+::-webkit-scrollbar-thumb { background: #FFFFFF; }
+::-webkit-scrollbar-thumb:hover { background: #EFEFEF; }
+html { scroll-behavior: smooth; }  
+
+body
+{
+    background-color: #fff;
+    margin: 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#container
+{
+    position: relative;
+    display: block;
+    margin: auto;
+    height: 6000px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer
+{
+    width: 100% - 30px;
+    height: 280px;
+    background-image: linear-gradient(#FFFFFF00 20%, #ffffff44 80%);
+    text-align: right;
+    line-height: 520px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 30px;
+}

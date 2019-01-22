@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta name="description" content="Vault-Js">
+	<meta name="description" content="Portfolio">
 	<link rel="icon" href="images/transparent_kon.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/fontello.css">
