@@ -14,8 +14,10 @@
 		<a href="#"><div class="nav-element"><i class="icon-home"></i> Home</div></a>
 		<a href="#projects"><div class="nav-element"><i class="icon-code-1"></i> Projects</div></a>
 		<a href="#contact"><div class="nav-element"><i class="icon-mail-alt"></i> Contact</div></a>
+		<div class="nav-element-input"><input type="text" name="cmd" autocomplete="off"></div>
 	</nav>
 	<script type="text/javascript" src="js/nav.js"></script>
+	<script type="text/javascript" src="js/cmd.js"></script>
 	<div id="container">
 		<div id="name">Daniel Mondzielewski</div>
 		<script type="text/javascript" src="js/name.js"></script>
