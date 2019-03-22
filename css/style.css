@@ -24,11 +24,10 @@ body
 
 footer
 {
-    width: 100% - 30px;
-    height: 280px;
+    width: calc(100% - 30px);
+    height: 30px;
     background-image: linear-gradient(#FFFFFF00 20%, #ffffff44 80%);
     text-align: right;
-    line-height: 520px;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
@@ -43,23 +42,23 @@ footer
     height: 80px;
     border-radius: 40px;
     position: fixed;
-    top: 840px;
-    left: 94%;
+    top: 86%;
+    right: 2%;
     text-shadow: 0 0 10px #fff;
     transition-duration: 1000ms;
     opacity: 0;
     text-align: center;
-    font-size: 50px;
+    font-size: 4vh;
     line-height: 70px;
 }
 
 #name
 {
     position: relative;
-    top: 240px;
-    left: 32%;
+    top: 20vw;
+    left: 35vw;
     width: 695px;
-    font-size: 69px;
+    font-size: 3.2vw;
     color: #000;
     text-shadow: 0 0 5px #000;
     font-weight: 200;
@@ -89,11 +88,17 @@ nav a
     line-height: 30px;
     color: #fff;
     font-weight: bold;
+    font-size: 1.6vh;
 }
 
 nav a:first-of-type
 {
-    margin-left: 40px;
+    margin-left: 2vh;
+}
+
+.nav-text
+{
+    visibility: visible;
 }
 
 .nav-element
@@ -162,19 +167,24 @@ nav a:first-of-type
     filter: drop-shadow(0 0 10px #FFF);
     transform: rotateZ(-5deg);
     background-color: #FFF;
+    margin-bottom: 300px;
+}
+
+.section-text
+{
+    font-size: 40px;
+    position: relative;
+    top: 0vw;
+    left: 45%;
 }
 
 .section-header p
 {
     transform: rotateZ(5deg);
-    font-size: 40px;
     line-height: 160px;
     color: #000000;
     font-weight: bold;
     text-align: left;
-    position: relative;
-    top: 80px;
-    left: 45%;
 }
 
 #projects
@@ -182,6 +192,251 @@ nav a:first-of-type
     position: relative;
     top: 2000px;
     height: 800px;
+}
+
+#project-list
+{
+    width: 80%;
+    margin: auto;
+    height: auto;
+    padding: 30px;
+}
+
+#project-list .content
+{
+    width: 96%;
+    height: max-content;
+
+    margin: auto;
+}
+
+.project
+{
+    height: content;
+    width: content;
+    margin: 0px;
+    float: left;
+}
+
+.project-T-cont
+{
+    height: 28vw;
+    width: 42vw;
+}
+
+.project-T
+{
+    height: 14vw;
+    width: 42vw;
+    background-color: #AE12AE;
+    float: left;
+}
+
+.project-T:after
+{
+    content: '';
+    position: relative;
+    top: 14vw;
+    left: 14vw;
+    height: 14vw;
+    width: 14vw;
+    background-color: #AE12AE;
+    float: left;
+}
+
+.project-Z-cont
+{
+    height: 28vw;
+    width: 42vw;
+}
+
+.project-Z
+{
+    height: 14vw;
+    width: 28vw;
+    background-color: #12AE12;
+    float: left;
+}
+
+.project-Z:after
+{
+    content: '';
+    position: relative;
+    top: 14vw;
+    left: 14vw;
+    height: 14vw;
+    width: 28vw;
+    background-color: #12AE12;
+    float: left;
+}
+
+.project-nZ
+{
+    position: relative;
+    left: 14vw;
+    height: 14vw;
+    width: 28vw;
+    background-color: #AE2323;
+    float: left;
+}
+
+.project-nZ:after
+{
+    content: '';
+    position: relative;
+    top: 14vw;
+    left: -14vw;
+    height: calc(14vw - 1px);
+    width: 28vw;
+    background-color: #AE2323;
+    float: left;
+}
+
+.project-Q-cont
+{
+    height: 28vw;
+    width: 28vw;
+}
+
+.project-Q
+{
+    height: 28vw;
+    width: 28vw;
+    background-color: #FFFF12;
+    float: left;
+}
+
+.project-I-cont
+{
+    height: 56vw;
+    width: 14vw;
+}
+
+.project-I
+{
+    height: 56vw;
+    width: 14vw;
+    background-color: #12ABFF;
+    float: left;
+}
+
+.project-L-cont
+{
+    height: 42vw;
+    width: 28vw;
+}
+
+.project-L
+{
+    height: 42vw;
+    width: 14vw;
+    background-color: #DEAB12;
+    float: left;
+}
+
+.project-L:after
+{
+    content: '';
+    position: relative;
+    top: 28vw;
+    left: 14vw;
+    height: 14vw;
+    width: 14vw;
+    background-color: #DEAB12;
+    float: left;
+}
+
+.project-J
+{
+    position: relative;
+    top: 28vw;
+    height: 14vw;
+    width: 14vw;
+    background-color: #DE12AE;
+    float: left;
+}
+
+.project-J:after
+{
+    content: '';
+    position: relative;
+    top: -28vw;
+    left: 14vw;
+    height: 42vw;
+    width: 14vw;
+    background-color: #DE12AE;
+    float: left;
+}
+
+#project_1
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
+}
+#project_2
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    transform: rotate(0deg) translate(0px, 0px);
+}
+#project_3
+{
+    position: relative;
+    transform-origin: left top;
+    transform: rotate(90deg) translate(-14vw, calc(-56vw));
+}
+
+#project_4
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
+}
+#project_5
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
+}
+#project_6
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
+}
+#project_7
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
+}
+#project_8
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
+}
+#project_9
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
+}
+#project_10
+{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    /* transform: rotate(90deg); */
 }
 
 #contact
@@ -248,3 +503,55 @@ nav a:first-of-type
 
 /*#endregion Sections*/
 
+
+
+@media screen and (max-width: 600px)
+{
+    #name
+    {
+        position: relative;
+        top: 20vw;
+        left: 28vw;
+        width: 695px;
+        font-size: 5vw;
+        color: #000;
+        text-shadow: 0 0 5px #000;
+        font-weight: 300;
+        text-align: left;
+    }
+
+    .nav-text
+    {
+      visibility: hidden;
+    }
+
+    .nav-element
+    {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        transition-duration: 600ms;
+        text-shadow: 0 0px 0px #fff;
+        cursor: default;
+    }
+
+    .section-header
+    {
+        position: relative;
+        top: 150px;
+        left: -5%;
+        width: 110%;
+        height: 80px;
+        filter: drop-shadow(0 0 10px #FFF);
+        transform: rotateZ(-5deg);
+        background-color: #FFF;
+    }
+
+    .section-text
+    {
+        font-size: 6vw;
+        position: relative;
+        top: -8vw;
+        left: 38vw;
+    }
+}

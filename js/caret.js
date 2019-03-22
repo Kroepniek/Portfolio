@@ -6,7 +6,7 @@ function CaretIt()
     {
         nameDiv[i] = nameDiv[i].getElementsByClassName('section-header');
         nameDiv[i] = nameDiv[i][0].getElementsByTagName('p');
-        nameDiv[i] = nameDiv[i][0];
+        nameDiv[i] = nameDiv[i][0].children[0];
     }
 
     setInterval(function()
