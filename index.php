@@ -7,7 +7,6 @@
 	<link rel="icon" href="images/transparent_kon.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/fontello.css">
-	<script type="text/javascript" src="js/scroll.js"></script>
 	<title>Daniel Mondzielewski</title>
 </head>
 <body>
@@ -26,37 +25,48 @@
 			<div class="section-header"><p><span class="section-text"><i class="icon-code-1"></i> Projects</span></p></div>
 			<div id="project-list">
 				<div class="content">
-					<div class="project project-Q-cont" id="project_1">
-						<div class="project-Q"></div>
-					</div>
-					<div class="project project-T-cont" id="project_2">
-						<div class="project-T"></div>
-					</div>
-					<div class="project project-Z-cont" id="project_3">
-						<div class="project-nZ"></div>
-					</div>
-					<div class="project project-I-cont" id="project_4">
-						<div class="project-I"></div>
-					</div>
-					<div class="project project-L-cont" id="project_5">
-						<div class="project-J"></div>
-					</div>
-					<div class="project project-L-cont" id="project_6">
-						<div class="project-J"></div>
-					</div>
-					<div class="project project-T-cont" id="project_7">
-						<div class="project-T"></div>
-					</div>
-					<div class="project project-Z-cont" id="project_8">
-						<div class="project-nz"></div>
-					</div>
-					<div class="project project-L-cont" id="project_9">
-						<div class="project-J"></div>
-					</div>
-					<div class="project project-Z-cont" id="project_10">
-						<div class="project-Z"></div>
-					</div>
+					<div class="project" id="project_0x0"></div>
+					<div class="project" id="project_1x0"></div>
+					<div class="project" id="project_2x0"></div>
+					<div class="project" id="project_3x0"></div>
+					<div class="project" id="project_4x0"></div>
+					<div class="project" id="project_0x1"></div>
+					<div class="project" id="project_1x1"></div>
+					<div class="project" id="project_2x1"></div>
+					<div class="project" id="project_3x1"></div>
+					<div class="project" id="project_4x1"></div>
+					<div class="project" id="project_0x2"></div>
+					<div class="project" id="project_1x2"></div>
+					<div class="project" id="project_2x2"></div>
+					<div class="project" id="project_3x2"></div>
+					<div class="project" id="project_4x2"></div>
+					<div class="project" id="project_0x3"></div>
+					<div class="project" id="project_1x3"></div>
+					<div class="project" id="project_2x3"></div>
+					<div class="project" id="project_3x3"></div>
+					<div class="project" id="project_4x3"></div>
+					<div class="project" id="project_0x4"></div>
+					<div class="project" id="project_1x4"></div>
+					<div class="project" id="project_2x4"></div>
+					<div class="project" id="project_3x4"></div>
+					<div class="project" id="project_4x4"></div>
+					<div class="project" id="project_0x5"></div>
+					<div class="project" id="project_1x5"></div>
+					<div class="project" id="project_2x5"></div>
+					<div class="project" id="project_3x5"></div>
+					<div class="project" id="project_4x5"></div>
+					<div class="project" id="project_0x6"></div>
+					<div class="project" id="project_1x6"></div>
+					<div class="project" id="project_2x6"></div>
+					<div class="project" id="project_3x6"></div>
+					<div class="project" id="project_4x6"></div>
+					<div class="project" id="project_0x7"></div>
+					<div class="project" id="project_1x7"></div>
+					<div class="project" id="project_2x7"></div>
+					<div class="project" id="project_3x7"></div>
+					<div class="project" id="project_4x7"></div>
 				</div>
+				<script type="text/javascript" src="js/tetris.js"></script>
 			</div>
 		</div>
 		<div class="section" id="contact">
@@ -72,6 +82,7 @@
 	</div>
 	<script type="text/javascript" src="js/caret.js"></script>
 	<a id="back-to-top"><i class="icon-up-open"></i></a>
+	<script type="text/javascript" src="js/scroll.js"></script>
 	<?php require "footer.php"; ?>
 </body>
 </html>
