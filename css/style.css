@@ -54,10 +54,14 @@ footer
 
 #name
 {
-    position: relative;
-    top: 20vw;
-    left: 35vw;
-    width: 695px;
+    margin: 20vw auto 0vw auto;
+    width: 32.4vw;
+}
+
+#name span
+{
+    display: inline-block;
+    width: 100%;
     font-size: 3.2vw;
     color: #000;
     text-shadow: 0 0 5px #000;
@@ -88,7 +92,7 @@ nav a
     line-height: 30px;
     color: #fff;
     font-weight: bold;
-    font-size: 1.6vh;
+    font-size: 1.8vh;
 }
 
 nav a:first-of-type
@@ -146,6 +150,7 @@ nav a:first-of-type
 .nav-element-visible:hover
 {
     background-color: #FFA17F;
+    cursor: pointer;
 }
 
 /*#endregion Nav*/
@@ -438,21 +443,18 @@ nav a:first-of-type
 
 /*#endregion Sections*/
 
-
-
 @media screen and (max-width: 600px)
 {
-    #name
+    nav a
     {
         position: relative;
-        top: 20vw;
-        left: 28vw;
-        width: 695px;
-        font-size: 5vw;
-        color: #000;
-        text-shadow: 0 0 5px #000;
-        font-weight: 300;
-        text-align: left;
+        margin-left: 5px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 2.4vh;
     }
 
     .nav-text

@@ -19,7 +19,9 @@
 	<script type="text/javascript" src="js/nav.js"></script>
 	<script type="text/javascript" src="js/cmd.js"></script>
 	<div id="container">
-		<div id="name">Daniel Mondzielewski</div>
+		<div id="name">
+			<span>Daniel Mondzielewski</span>
+		</div>
 		<script type="text/javascript" src="js/name.js"></script>
 		<div class="section" id="projects">
 			<div class="section-header"><p><span class="section-text"><i class="icon-code-1"></i> Projects</span></p></div>

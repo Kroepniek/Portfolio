@@ -1,0 +1,223 @@
+::-webkit-scrollbar { width: 5px; background-color: #000; }
+::-webkit-scrollbar-thumb { background: #FFFFFF; }
+::-webkit-scrollbar-thumb:hover { background: #EFEFEF; }
+html { scroll-behavior: smooth; }  
+
+body
+{
+    background-image: linear-gradient(#ffffff 90%, #FFA17F);
+    background-repeat: no-repeat;
+    margin: 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#container
+{
+    position: relative;
+    display: block;
+    margin: auto;
+    height: 6000px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer
+{
+    width: calc(100% - 30px);
+    height: 30px;
+    background-image: linear-gradient(#FFFFFF00 20%, #ffffff44 80%);
+    text-align: right;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+#back-to-top
+{
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    position: fixed;
+    top: 86%;
+    right: 2%;
+    text-shadow: 0 0 10px #fff;
+    transition-duration: 1000ms;
+    opacity: 0;
+    text-align: center;
+    font-size: 4vh;
+    line-height: 70px;
+}
+
+#name
+{
+    position: relative;
+    top: 20vw;
+    left: 35vw;
+    width: 695px;
+    font-size: 3.2vw;
+    color: #000;
+    text-shadow: 0 0 5px #000;
+    font-weight: 200;
+    text-align: left;
+}
+
+/*#region Nav*/
+
+nav
+{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    height: 30px;
+    width: 100%;
+    transition-duration: 600ms;
+    background-color: rgba(255,255,255,0.25);
+    box-shadow: 0 0 0px #fff;
+}
+
+nav a
+{
+    position: relative;
+    margin-left: 5px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.8vh;
+}
+
+nav a:first-of-type
+{
+    margin-left: 2vh;
+}
+
+.nav-text
+{
+    visibility: visible;
+}
+
+.nav-element
+{
+    height: 30px;
+    width: 100px;
+    display: inline-block;
+    transition-duration: 600ms;
+    text-shadow: 0 0px 0px #fff;
+    cursor: default;
+}
+
+.nav-element-input
+{
+    position: relative;
+    top: -5px;
+    height: 30px;
+    width: 1550px;
+    display: none;
+    transition-duration: 600ms;
+    cursor: default;
+    text-align: right;
+}
+
+.nav-element-input input[name="cmd"]
+{
+    height: 18px;
+    width: 200px;
+    display: inline-block;
+    transition-duration: 600ms;
+    cursor: default;
+    border: none;
+    outline: none;
+    text-align: right;
+    position: relative;
+    top: 4px;
+    right: 4px;
+}
+
+.nav-element-input input[type="text"]:hover
+{
+    outline: none;
+}
+
+.nav-element-visible:hover
+{
+    background-color: #FFA17F;
+    cursor: pointer;
+}
+
+/*#endregion Nav*/
+
+#project-timeline
+{
+    background-color: red;
+    width: 80%;
+    min-height: 100px;
+    max-width: 1600px;
+    margin: 200px auto 0 auto;
+}
+
+@media screen and (max-width: 575.98px) 
+{
+    /*#region Nav*/
+    nav a
+    {
+        position: relative;
+        margin-left: 5px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 2.4vh;
+    }
+
+    .nav-text
+    {
+      visibility: hidden;
+    }
+
+    .nav-element
+    {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        transition-duration: 600ms;
+        text-shadow: 0 0px 0px #fff;
+        cursor: default;
+    }
+    /*#endregion Nav*/
+    
+    #project-timeline
+    {
+        background-color: red;
+        width: 80%;
+        min-height: 100px;
+        margin: 200px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 767.98px)
+{
+
+}
+
+@media screen and (max-width: 991.98px)
+{
+
+}
+
+@media screen and (max-width: 1199.98px)
+{
+    #project-timeline
+    {
+        background-color: red;
+        width: 80%;
+        min-height: 100px;
+        max-width: 1600px;
+        margin: 200px auto 0 auto;
+    }
+}

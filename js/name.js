@@ -1,6 +1,6 @@
 function WriteName()
 {
-    var nameDiv = document.getElementById('name');
+    var nameDiv = document.getElementById('name').children[0];
     var text = nameDiv.innerHTML;
     var writenText = "";
 
