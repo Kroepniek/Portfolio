@@ -25,48 +25,48 @@
 			<div class="section-header"><p><span class="section-text"><i class="icon-code-1"></i> Projects</span></p></div>
 			<div id="project-list">
 				<div class="content">
-					<div class="project" id="project_0x0"></div>
-					<div class="project" id="project_1x0"></div>
-					<div class="project" id="project_2x0"></div>
-					<div class="project" id="project_3x0"></div>
-					<div class="project" id="project_4x0"></div>
-					<div class="project" id="project_0x1"></div>
-					<div class="project" id="project_1x1"></div>
-					<div class="project" id="project_2x1"></div>
-					<div class="project" id="project_3x1"></div>
-					<div class="project" id="project_4x1"></div>
-					<div class="project" id="project_0x2"></div>
-					<div class="project" id="project_1x2"></div>
-					<div class="project" id="project_2x2"></div>
-					<div class="project" id="project_3x2"></div>
-					<div class="project" id="project_4x2"></div>
-					<div class="project" id="project_0x3"></div>
-					<div class="project" id="project_1x3"></div>
-					<div class="project" id="project_2x3"></div>
-					<div class="project" id="project_3x3"></div>
-					<div class="project" id="project_4x3"></div>
-					<div class="project" id="project_0x4"></div>
-					<div class="project" id="project_1x4"></div>
-					<div class="project" id="project_2x4"></div>
-					<div class="project" id="project_3x4"></div>
-					<div class="project" id="project_4x4"></div>
-					<div class="project" id="project_0x5"></div>
-					<div class="project" id="project_1x5"></div>
-					<div class="project" id="project_2x5"></div>
-					<div class="project" id="project_3x5"></div>
-					<div class="project" id="project_4x5"></div>
-					<div class="project" id="project_0x6"></div>
-					<div class="project" id="project_1x6"></div>
-					<div class="project" id="project_2x6"></div>
-					<div class="project" id="project_3x6"></div>
-					<div class="project" id="project_4x6"></div>
-					<div class="project" id="project_0x7"></div>
-					<div class="project" id="project_1x7"></div>
-					<div class="project" id="project_2x7"></div>
-					<div class="project" id="project_3x7"></div>
-					<div class="project" id="project_4x7"></div>
+					<div class="project" id="project_0x0"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x0"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x0"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x0"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x0"><div class="project-text-content"></div></div>
+					<div class="project" id="project_0x1"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x1"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x1"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x1"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x1"><div class="project-text-content"></div></div>
+					<div class="project" id="project_0x2"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x2"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x2"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x2"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x2"><div class="project-text-content"></div></div>
+					<div class="project" id="project_0x3"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x3"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x3"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x3"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x3"><div class="project-text-content"></div></div>
+					<div class="project" id="project_0x4"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x4"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x4"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x4"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x4"><div class="project-text-content"></div></div>
+					<div class="project" id="project_0x5"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x5"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x5"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x5"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x5"><div class="project-text-content"></div></div>
+					<div class="project" id="project_0x6"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x6"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x6"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x6"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x6"><div class="project-text-content"></div></div>
+					<div class="project" id="project_0x7"><div class="project-text-content"></div></div>
+					<div class="project" id="project_1x7"><div class="project-text-content"></div></div>
+					<div class="project" id="project_2x7"><div class="project-text-content"></div></div>
+					<div class="project" id="project_3x7"><div class="project-text-content"></div></div>
+					<div class="project" id="project_4x7"><div class="project-text-content"></div></div>
 				</div>
-				<script type="text/javascript" src="js/tetris.js"></script>
+				<script type="text/javascript" src="js/projects.js"></script>
 			</div>
 		</div>
 		<div class="section" id="contact">

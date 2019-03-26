@@ -215,22 +215,24 @@ nav a:first-of-type
     position: relative;
     height: 14vw;
     width: 14vw;
-    margin: -0.10vw -0.12vw;
+    margin: -2px -2.4px;
     display: inline-block;
     box-shadow: inset 0 0 45px #BBBBBB;
     background-color: #FFFFFF;
+    color: #000000;
     opacity: 0.6;
     z-index: 0;
+    transition-duration: 250ms;
 }
 
 .project-hover
 {
     z-index: 5;
+    color: #FFFFFF;
 }
 
 .project-Q-hover
 {
-    /* filter: drop-shadow(0 0 15px #FFFC33); */
     box-shadow: inset 0 0 45px #BBB800;
     background-color: #FFFC33;
     opacity: 0.6;
@@ -238,7 +240,6 @@ nav a:first-of-type
 
 .project-T-hover
 {
-    /* filter: drop-shadow(0 0 15px #AF0FFF); */
     box-shadow: inset 0 0 45px #6B0BBB;
     background-color: #AF0FFF;
     opacity: 0.6;
@@ -246,7 +247,6 @@ nav a:first-of-type
 
 .project-S-hover
 {
-    /* filter: drop-shadow(0 0 15px #FF3336); */
     box-shadow: inset 0 0 45px #BB0002;
     background-color: #FF3336;
     opacity: 0.6;
@@ -254,7 +254,6 @@ nav a:first-of-type
 
 .project-I-hover
 {
-    /* filter: drop-shadow(0 0 15px #33BBFF); */
     box-shadow: inset 0 0 45px #0077BB;
     background-color: #33BBFF;
     opacity: 0.6;
@@ -262,7 +261,6 @@ nav a:first-of-type
 
 .project-J-hover
 {
-    /* filter: drop-shadow(0 0 15px #FF88FF); */
     box-shadow: inset 0 0 45px #BB44BB;
     background-color: #FF88FF;
     opacity: 0.6;
@@ -270,7 +268,6 @@ nav a:first-of-type
 
 .project-L-hover
 {
-    /* filter: drop-shadow(0 0 15px #FFA632); */
     box-shadow: inset 0 0 45px #BB6200;
     background-color: #FFA632;
     opacity: 0.6;
@@ -278,10 +275,103 @@ nav a:first-of-type
 
 .project-Z-hover
 {
-    /* filter: drop-shadow(0 0 15px #3FFF33); */
     box-shadow: inset 0 0 45px #0BBB00;
     background-color: #3FFF33;
     opacity: 0.6;
+}
+
+.project-button
+{
+    font-size: 1.6vw;
+    text-align: center;
+    position: absolute;
+    top: 37%;
+    left: 10%;
+    width: 80%;
+    height: 24%;
+    border-radius: 5px;
+}
+
+.project-button-text
+{
+    width: 100%;
+    height: 1.6vw;
+    margin: calc((25% - 1.6vw) / 2) 0
+}
+
+.project-button:hover
+{
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+.project-button-block
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-button-DEF
+{
+    background-color: #BBBBBB;
+}
+
+.project-button-Q
+{
+    background-color: #BBB800;
+}
+
+.project-button-T
+{
+    background-color: #6B0BBB;
+}
+
+.project-button-S
+{
+    background-color: #BB0002;
+}
+
+.project-button-I
+{
+    background-color: #0077BB;
+}
+
+.project-button-J
+{
+    background-color: #BB44BB;
+}
+
+.project-button-L
+{
+    background-color: #BB6200;
+}
+
+.project-button-Z
+{
+    background-color: #0BBB00;
+}
+
+.project-text-content
+{
+    font-size: 3.6vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 13vw;
+}
+
+.project-sub-text-content
+{
+    font-size: 2.4vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 13vw;
 }
 
 #contact

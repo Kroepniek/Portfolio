@@ -9,7 +9,11 @@
 .icon-spin6:before { content: '\e839'; } /* '' */
 .icon-gplus:before { content: '\f0d5'; } /* '' */
 .icon-mail-alt:before { content: '\f0e0'; } /* '' */
+.icon-html5:before { content: '\f13b'; } /* '' */
+.icon-css3:before { content: '\f13c'; } /* '' */
 .icon-youtube-play:before { content: '\f16a'; } /* '' */
 .icon-git:before { content: '\f1d3'; } /* '' */
+.icon-toggle-off:before { content: '\f204'; } /* '' */
+.icon-toggle-on:before { content: '\f205'; } /* '' */
 .icon-microchip:before { content: '\f2db'; } /* '' */
 .icon-facebook-rect:before { content: '\f301'; } /* '' */
