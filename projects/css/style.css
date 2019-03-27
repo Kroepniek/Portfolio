@@ -153,11 +153,128 @@ nav a:first-of-type
 
 #project-timeline
 {
-    background-color: red;
+    background-color: #FFFFFF;
     width: 80%;
-    min-height: 100px;
+    height: 700px;
     max-width: 1600px;
-    margin: 200px auto 0 auto;
+    margin: 100px auto 0 auto;
+    overflow: hidden;
+}
+
+#project-slider-years
+{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100px;
+}
+
+#project-slider-years-content
+{
+    position: relative;
+    top: 27%;
+    min-width: 100px;
+    min-height: 46%;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+.project-slider-years-item
+{
+    font-size: 2vw;
+    color: #454545;
+    margin-right: 30px;
+    transition: color 150ms ease-in-out;
+}
+
+.project-slider-years-item:last-child
+{
+    font-size: 2vw;
+    color: #454545;
+    margin-right: 0px;
+}
+
+.project-slider-years-item:hover
+{
+    color: #FFA17F;
+}
+
+.project-slider-years-item-active
+{
+    color: #FFA17F;
+    text-decoration: underline;
+}
+
+.project-slider-years-item-active:last-child
+{
+    color: #FFA17F;
+    text-decoration: underline;
+}
+
+#project-slider
+{
+    /* background-color: #FFFFFF; */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    filter: drop-shadow(0 0 50px #000);
+}
+
+#project-slider-info
+{
+    position: relative;
+    left: 68%;
+    top: 20%;
+    height: 60%;
+    width: 30%;
+    color: #FFFFFF;
+    background-color: #000000;
+    z-index: 6;
+}
+
+#project-slider-info-title
+{
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 36px;
+    width: 100%;
+    height: 46px;
+    background-color: #000;
+}
+
+#project-slider-info-desc
+{
+    padding: 5px 10px;
+    position: absolute;
+    top: 84px;
+    left: 0;
+    color: #FFFFFF;
+    font-size: 18px;
+    width: calc(100% - 20px);
+    height: 138px;
+    overflow: hidden;
+    background-color: #000;
+    overflow-wrap: break-word;
+}
+
+#project-slider-item
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: auto;
+    height: 100%;
+    float: left;
+}
+
+#project-slider-gradient
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
 }
 
 @media screen and (max-width: 575.98px) 
@@ -190,14 +307,6 @@ nav a:first-of-type
         cursor: default;
     }
     /*#endregion Nav*/
-    
-    #project-timeline
-    {
-        background-color: red;
-        width: 80%;
-        min-height: 100px;
-        margin: 200px auto 0 auto;
-    }
 }
 
 @media screen and (max-width: 767.98px)
@@ -212,12 +321,5 @@ nav a:first-of-type
 
 @media screen and (max-width: 1199.98px)
 {
-    #project-timeline
-    {
-        background-color: red;
-        width: 80%;
-        min-height: 100px;
-        max-width: 1600px;
-        margin: 200px auto 0 auto;
-    }
+    
 }

@@ -19,11 +19,21 @@
 	<script type="text/javascript" src="../js/nav.js"></script>
 	<div id="container">
 		<div id="project-timeline">
-			<div id="project-timeline-filters">
-
+			<div id="project-slider-years">
+				<div id="project-slider-years-content">
+					<span class="project-slider-years-item">2018</span>
+					<span class="project-slider-years-item project-slider-years-item-active">2019</span>
+				</div>
 			</div>
-			<div id="project-timeline-content">
-				
+			<div id="project-slider">
+				<img src="images/project_1.png" alt="project" id="project-slider-item">
+				<img src="images/slider-gradient_2.png" alt="project" id="project-slider-gradient">
+				<div id="project-slider-info">
+					<h3 id="project-slider-info-title">DC Heroes</h3>
+					<span id="project-slider-info-desc">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</span>
+				</div>
 			</div>
 		</div>
 		<a id="back-to-top"><i class="icon-up-open"></i></a>
