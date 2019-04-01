@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Czas generowania: 28 Mar 2019, 23:24
+-- Czas generowania: 01 Kwi 2019, 11:33
 -- Wersja serwera: 5.7.19
 -- Wersja PHP: 7.1.20
 
@@ -45,9 +45,10 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`ID`, `PROJECT_LANG`, `PROJECT_TITLE`, `PROJECT_DESC_NL`, `PROJECT_DESC_EN`, `PROJECT_DESC_PL`, `PROJECT_DATE`, `PROJECT_IMG`, `PROJECT_URL`) VALUES
-(1, 'HTML,PHP,JS', 'DC Heroes', 'NL', 'EN', 'PL', '2019-03-01', 'dc-heroes-full.png', 'dcheroes'),
+(1, 'HTML,PHP,JS', 'DC Heroes', 'NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL NL', 'EN', 'PL', '2019-03-01', 'dc-heroes-full.png', 'dcheroes'),
 (2, 'HTML,PHP,JS', 'Radio Gaga', 'NL', 'EN', 'PL', '2018-10-22', 'radio-gaga-full.png', 'radiogaga'),
-(3, 'HTML,PHP,JS', 'Game World', 'NL', 'EN', 'PL', '2018-12-14', 'game-world-full.png', 'gameworld');
+(3, 'HTML,PHP,JS', 'Game World', 'NL', 'EN', 'PL', '2018-12-14', 'game-world-full.png', 'gameworld'),
+(4, 'HTML,PHP,JS', 'Vault Js', 'NL', 'EN', 'PL', '2019-01-22', 'vault-js-full.png', 'vaultjs');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -67,7 +68,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT dla tabeli `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

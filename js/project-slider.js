@@ -277,7 +277,7 @@ function CheckSize()
     }
     else if (window.innerWidth < 1600)
     {
-        projectSlider.css("display", "none");
+        //projectSlider.css("display", "none");
         clearInterval(autoSliderInterval);
     }
 }
