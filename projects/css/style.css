@@ -52,19 +52,6 @@ footer
     line-height: 70px;
 }
 
-#name
-{
-    position: relative;
-    top: 20vw;
-    left: 35vw;
-    width: 695px;
-    font-size: 3.2vw;
-    color: #000;
-    text-shadow: 0 0 5px #000;
-    font-weight: 200;
-    text-align: left;
-}
-
 /*#region Nav*/
 
 nav
@@ -170,7 +157,7 @@ nav a:first-of-type
 #project-slider-years-content
 {
     position: relative;
-    top: 27%;
+    top: calc(27% - 10px);
     min-width: 100px;
     min-height: 46%;
     margin: auto;
@@ -180,15 +167,19 @@ nav a:first-of-type
 
 .project-slider-years-item
 {
-    font-size: 2vw;
+    font-size: calc(10px + 2vw);
     color: #454545;
     margin-right: 30px;
     transition: color 150ms ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .project-slider-years-item:last-child
 {
-    font-size: 2vw;
+    font-size: calc(10px + 2vw);
     color: #454545;
     margin-right: 0px;
 }
@@ -213,10 +204,8 @@ nav a:first-of-type
 
 #project-slider
 {
-    /* background-color: #FFFFFF; */
     position: relative;
     top: 0;
-    left: 0;
     width: 100%;
     height: 600px;
     filter: drop-shadow(0 0 50px #000);
@@ -284,10 +273,38 @@ nav a:first-of-type
     color: #000000;
     font-size: 18px;
     width: calc(100% - 20px);
-    height: 138px;
+    height: auto;
+    max-height: 200px;
     overflow: hidden;
     background-color: #000;
     overflow-wrap: break-word;
+}
+
+#project-slider-show-button
+{
+    position: absolute;
+    top: 124px;
+    left: calc(50% - 130px);
+    color: #FFFFFF;
+    font-size: 28px;
+    width: 260px;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 5px;
+    background-color: #FFA17F;
+    box-shadow: inset 0 0 5px #000000;
+    transition-property: box-shadow, background-color, color;
+}
+
+#project-slider-show-button:hover
+{
+    box-shadow: inset 0 0 15px #000000;
+    cursor: pointer;
+}
+
+#project-slider-show-button-link
+{
+    text-decoration: none;
 }
 
 .project-slider-default-delay

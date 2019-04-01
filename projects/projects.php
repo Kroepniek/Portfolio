@@ -24,12 +24,13 @@
 				<div id="project-slider-years-content"></div>
 			</div>
 			<div id="project-slider">
-				<img src="images/dc-heroes-full.png" alt="project" id="project-slider-item">
-				<img src="images/slider-gradient.png" alt="project" id="project-slider-gradient">
+				<img src="images/blank.png" alt="project" id="project-slider-item">
+				<img src="images/slider-gradient.png" alt="gradient" id="project-slider-gradient">
 				<div id="project-slider-balls"></div>
 				<div id="project-slider-info">
-					<h3 id="project-slider-info-title">DC Heroes</h3>
+					<h3 id="project-slider-info-title"></h3>
 					<span id="project-slider-info-desc"></span>
+					<a href="" id="project-slider-show-button-link"><div id="project-slider-show-button">Show website</div></a>
 				</div>
 			</div>
 		</div>

@@ -6,16 +6,20 @@ var projectSliderGradient = $('#project-slider-gradient');
 var projectSliderProjectPhoto = $('#project-slider-item');
 var projectSliderProjectTitle = $('#project-slider-info-title');
 var projectSliderProjectDesc = $('#project-slider-info-desc');
+var projectSliderProjectShowButton = $('#project-slider-show-button');
+var projectSliderProjectShowButtonLink = $('#project-slider-show-button-link');
 
 var projects = new Object();
 var currentSliderProjects = new Object();
 var currentProjectsYear = '';
 var currentProjectSlide = 0;
 
+var autoSliderInterval = setInterval(AutoSlider, 5000);
+
 function Init()
 {
+    CheckSize();
     GetFromDataBase("getProjects", "");
-    AutoSlider();
 }
 
 function GetFromDataBase(requestFunction, requestParameters)
@@ -122,6 +126,7 @@ function SetupYears()
 function ChangeYear(clickedSpanObject, newYear)
 {
     let span = document.getElementById('project-slider-years-content');
+    let balls = document.getElementById('project-slider-balls');
 
     for (let s = 0; s < span.children.length; s++)
     {
@@ -146,9 +151,12 @@ function ChangeYear(clickedSpanObject, newYear)
     }
 }
 
+//#region 1920 orange
+
 function SetupSlider()
 {
     projectSliderBalls.html('');
+    let balls = document.getElementById('project-slider-balls');
 
     for (let i = 0; i < currentSliderProjects.length; i++)
     {
@@ -156,6 +164,7 @@ function SetupSlider()
         {
             projectSliderBalls.append('<i class="icon-circle project-slider-ball-active"></i>');
             currentProjectSlide = 0;
+            ForceChangeSlide(balls.children[0], 0, 250);
         }
         else
         {
@@ -166,14 +175,14 @@ function SetupSlider()
 
 function ForceChangeSlide(ball, slideIndex, delay)
 {
-    if (currentSliderProjects.length > 1)
+    if (currentSliderProjects.length >= 1)
     {
         let balls = document.getElementById('project-slider-balls');
 
         for (let s = 0; s < balls.children.length; s++)
         {
             balls.children[s].classList = "icon-circle project-slider-ball";
-            balls.children[s].setAttribute("onclick", 'ForceChangeSlide(this, ' + s + ')');
+            balls.children[s].setAttribute("onclick", 'ForceChangeSlide(this, ' + s + ', 250)');
         }
 
         $(ball).removeClass("project-slider-ball");
@@ -193,32 +202,48 @@ function SetSlide(slideIndex, delay)
         projectSliderGradient.toggleClass("project-slider-default-delay", true);
         projectSliderProjectTitle.toggleClass("project-slider-default-delay", true);
         projectSliderProjectDesc.toggleClass("project-slider-default-delay", true);
+        projectSliderProjectShowButton.toggleClass("project-slider-default-delay", true);
         projectSliderGradient.toggleClass("project-slider-fast-delay", false);
         projectSliderProjectTitle.toggleClass("project-slider-fast-delay", false);
         projectSliderProjectDesc.toggleClass("project-slider-fast-delay", false);
+        projectSliderProjectShowButton.toggleClass("project-slider-fast-delay", false);
     }
     else
     {
         projectSliderGradient.toggleClass("project-slider-fast-delay", true);
         projectSliderProjectTitle.toggleClass("project-slider-fast-delay", true);
         projectSliderProjectDesc.toggleClass("project-slider-fast-delay", true);
+        projectSliderProjectShowButton.toggleClass("project-slider-fast-delay", true);
         projectSliderGradient.toggleClass("project-slider-default-delay", false);
         projectSliderProjectTitle.toggleClass("project-slider-default-delay", false);
         projectSliderProjectDesc.toggleClass("project-slider-default-delay", false);
+        projectSliderProjectShowButton.toggleClass("project-slider-default-delay", false);
+
+        clearInterval(autoSliderInterval);
+        autoSliderInterval = setInterval(AutoSlider, 5000);
     }
 
     projectSliderGradient.css("background-color", "#000000");
     projectSliderProjectTitle.css("color", "#000000");
     projectSliderProjectDesc.css("color", "#000000");
+    projectSliderProjectShowButton.css("color", "#000000");
+    projectSliderProjectShowButton.css("background-color", "#000000");
     
     setTimeout(() => {
         projectSliderProjectPhoto.attr('src', "images/" + currentSliderProjects[slideIndex]['PROJECT_IMG']);
         projectSliderProjectTitle.html(currentSliderProjects[slideIndex]['PROJECT_TITLE']);
         projectSliderProjectDesc.html(currentSliderProjects[slideIndex]['PROJECT_DESC_NL']);
+        projectSliderProjectShowButtonLink.attr('href', currentSliderProjects[slideIndex]['PROJECT_URL'] + "/index.php");
+
+        let descHeight = projectSliderProjectDesc.height();
+        projectSliderProjectShowButton.css("top", (descHeight + 112) + "px");
 
         projectSliderGradient.css("background-color", "transparent");
         projectSliderProjectTitle.css("color", "#FFFFFF");
         projectSliderProjectDesc.css("color", "#FFFFFF");
+        projectSliderProjectShowButton.css("color", "#FFFFFF");
+        projectSliderProjectShowButton.css("background-color", "#FFA17F");
+        projectSliderProjectShowButton.toggleClass("project-slider-fast-delay", true);
     }, delay);
 }
 
@@ -226,10 +251,37 @@ function AutoSlider()
 {
     let balls = document.getElementById('project-slider-balls');
 
-    setInterval(() => {
+    let tempCheck = currentProjectSlide;
+    currentProjectSlide = currentProjectSlide < currentSliderProjects.length - 1 ? currentProjectSlide + 1 : 0;
+    if (currentProjectSlide != tempCheck)
+    {
         ForceChangeSlide(balls.children[currentProjectSlide], currentProjectSlide, 1000);
-        currentProjectSlide = currentProjectSlide < currentSliderProjects.length - 1 ? currentProjectSlide + 1 : 0;
-    }, 5000);
+    }
 }
+
+//#endregion
+
+//#region <1920 darkorange
+
+
+
+//#endregion
+
+function CheckSize()
+{
+    if (window.innerWidth > 1600)
+    {
+        projectSlider.css("display", "block");
+        clearInterval(autoSliderInterval);
+        autoSliderInterval = setInterval(AutoSlider, 5000);
+    }
+    else if (window.innerWidth < 1600)
+    {
+        projectSlider.css("display", "none");
+        clearInterval(autoSliderInterval);
+    }
+}
+
+$(window).resize(CheckSize);
 
 Init();

@@ -1,7 +1,7 @@
 ::-webkit-scrollbar { width: 5px; background-color: #000; }
 ::-webkit-scrollbar-thumb { background: #FFFFFF; }
 ::-webkit-scrollbar-thumb:hover { background: #EFEFEF; }
-html { scroll-behavior: smooth; }  
+html { scroll-behavior: smooth; }
 
 body
 {
@@ -16,7 +16,7 @@ body
     position: relative;
     display: block;
     margin: auto;
-    height: 6000px;
+    height: 6400px;
     width: 100%;
     text-align: center;
     overflow: hidden;
@@ -390,13 +390,17 @@ nav a:first-of-type
 {
     position: relative;
     top: 50px;
+    width: 80%;
+    max-width: 400px;
+    height: 500px;
+    margin: auto;
 }
 
 #contact form input, textarea
 {
     font-family: inherit;
     display: block;
-    width: 400px;
+    width: calc(100% - 16px);
     margin: 10px auto auto;
     font-size: 16px;
     font-weight: bold;
@@ -414,13 +418,14 @@ nav a:first-of-type
     resize: none;
     padding-top: 8px;
     line-height: 18px;
+    width: calc(100% - 16px);
 }
 
 #contact form input[type="submit"]
 {
     font-family: inherit;
     display: block;
-    width: 416px;
+    width: 100%;
     margin: 10px auto auto;
     font-size: 16px;
     font-weight: bold;
@@ -437,14 +442,32 @@ nav a:first-of-type
 
 #contact form input[type="submit"]:hover
 {
-    box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 5px #000;
     text-shadow: 0 0 5px #fff;
+    cursor: pointer;
 }
 
 /*#endregion Sections*/
 
 @media screen and (max-width: 600px)
 {
+    #name
+    {
+        margin: 20vw auto 0vw calc(auto + 10px);
+        width: 64.8vw;
+    }
+
+    #name span
+    {
+        display: inline-block;
+        width: 100%;
+        font-size: 6.4vw;
+        color: #000;
+        text-shadow: 0 0 5px #000;
+        font-weight: 200;
+        text-align: left;
+    }
+
     nav a
     {
         position: relative;
@@ -482,13 +505,14 @@ nav a:first-of-type
         filter: drop-shadow(0 0 10px #FFF);
         transform: rotateZ(-5deg);
         background-color: #FFF;
+        margin-bottom: 170px;
     }
 
     .section-text
     {
         font-size: 6vw;
         position: relative;
-        top: -8vw;
+        top: calc(8px - 8vh);
         left: 38vw;
     }
 }
