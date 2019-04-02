@@ -1,108 +1,93 @@
-var cmd_input_div = document.getElementsByClassName('nav-element-input');
-var cmd_input = cmd_input_div[0].getElementsByTagName('input');
+var cmd = "";
 var writenPass = "";
 var pass = "";
+var status = "false";
 
 function SendRequest(prmtr, value, func)
 {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            func(this.responseText);
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            let response = this.responseText;
+
+            if (response.length > 0)
+            {
+                if (prmtr == "q")
+                {
+                    pass = response;
+                }
+                else if (prmtr == "chck")
+                {
+                    status = response;
+                }
+            }
+
+            func();
+
+            status = "false";
         }
-     };
+    };
     xmlhttp.open("POST", "getPass.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(prmtr + "=" + value);
 }
 
-function setPass(xhttp) 
+function DisplayInput()
 {
-    pass = xhttp;
-}
-
-function DisplayInput(state)
-{
-    switch (state) {
-        case true:
-            cmd_input_div[0].style.display = "inline-block";
-            setTimeout(function(){
-                cmd_input[0].style.boxShadow = "0px 0px 10px #000";
-                cmd_input[0].focus();
-            }, 10);
-        break;
-        case false:
-            cmd_input[0].style.boxShadow = "none";
-            setTimeout(function(){cmd_input_div[0].style.display = "none";}, 600);
-        break;
-    }
+    writenPass = prompt("Write password:");
 }
 
 function CheckKeys(e)
 {
     if (e.keyCode == 8)
     {
-        writenPass = writenPass.substr(0, writenPass.length-1);
+        cmd = cmd.substr(0, cmd.length-1);
     }
     else if (e.keyCode == 13)
     {
-        if (writenPass == "72736869")
+        if (cmd == "6568777378")
         {
-            DisplayInput(false);
+            SendRequest("chck", "true", function()
+            {
+                if (status == "false")
+                {
+                    DisplayInput();
+                    SendRequest("q", "true", CheckPass);
+                }
+            });
         }
-        else if (writenPass == "6568777378")
+        else if (cmd == "69887384")
         {
-            DisplayInput(true);
+            SendRequest("adm", "false", function(){console.log("Logged out successfully.");});
         }
 
-        writenPass = "";
+        cmd = "";
     }
     else
     {
-        writenPass += e.keyCode;
+        cmd += e.keyCode;
     }
 }
 
-function CheckPass(e)
+function CheckPass()
 {
-    if (e.keyCode == 13)
+    if (pass.length > 0)
     {
-        if (cmd_input[0].type == "text")
+        if (writenPass == pass)
         {
-            switch (cmd_input[0].value) {
-                case "login":
-                    cmd_input[0].type = "password";
-                    cmd_input[0].value = "";
-                break;
-                case "logout":
-                    cmd_input[0].type = "text";
-                    cmd_input[0].value = "";
-                    DisplayInput(false);
-                    SendRequest("adm", "false", function(){});
-                break;
-                case "admin.php":
-                    cmd_input[0].type = "text";
-                    cmd_input[0].value = "";
-                    var curUrl = window.location.href;
-                    curUrl = (curUrl.includes("index.php") ? curUrl.substr(0, curUrl.indexOf("index.php")) : curUrl);
-                    window.location.href = curUrl + "admin.php";
-                break;
-            }
+            SendRequest("adm", "true", function(){console.log("Logged in successfully.");});
         }
-        else if (cmd_input[0].type == "password")
+        else
         {
-            if (cmd_input[0].value == pass)
-            {
-                SendRequest("adm", "true", function(){});
-            }
+            console.log("Wrong password.");
+        }
 
-            cmd_input[0].value = "";
-            cmd_input[0].type = "text";
-        }
+        pass = "";
     }
-}
 
-SendRequest("q", "true", setPass);
+    writenPass = "";
+}
 
 window.addEventListener('keydown', CheckKeys, false);
-cmd_input[0].addEventListener('keydown', CheckPass, false);

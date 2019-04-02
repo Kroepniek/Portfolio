@@ -11,9 +11,9 @@
 </head>
 <body>
 	<nav id="nav">
-		<a href="#"><div class="nav-element"><i class="icon-home"></i> <span class="nav-text">Home</span></div></a>
-		<a href="#projects"><div class="nav-element"><i class="icon-code-1"></i> <span class="nav-text">Projects</span></div></a>
-		<a href="#contact"><div class="nav-element"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
+		<a href="#"><div class="nav-element" status="active"><i class="icon-home"></i> <span class="nav-text">Home</span></div></a>
+		<a href="#projects"><div class="nav-element" status="unactive"><i class="icon-code-1"></i> <span class="nav-text">Projects</span></div></a>
+		<a href="#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
 		<div class="nav-element-input"><input type="text" name="cmd" autocomplete="off"></div>
 	</nav>
 	<script type="text/javascript" src="js/nav.js"></script>

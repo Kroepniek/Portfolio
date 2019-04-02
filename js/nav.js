@@ -7,29 +7,36 @@ function Load()
     if (href.charAt(href.length-1) == '/')
 	{
         setTimeout(function(){
-            nav_bar.style.display = "block";
+            nav_bar.classList.add('nav-block');
         }, 1400);
     
         setTimeout(function(){
-            nav_bar.style.boxShadow = "0 0 250px #000";
+            nav_bar.classList.add('nav-visible');
         }, 2000);
     
         setTimeout(function(){
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < nav_bar_elements.length; i++)
             {
-                nav_bar_elements[i].style.textShadow="0 0px 10px #000";
                 nav_bar_elements[i].classList.add('nav-element-visible');
+                if (nav_bar_elements[i].getAttribute('status') == "active")
+                {
+                    nav_bar_elements[i].classList.add('nav-element-active');
+                }
             }
         }, 3000);
     } 
     else 
 	{
-        nav_bar.style.display = "block";
-        nav_bar.style.boxShadow = "0 0 250px #000";
-        for (var i = 0; i < 3; i++)
+        nav_bar.classList.add('nav-block');
+        nav_bar.classList.add('nav-visible');
+
+        for (var i = 0; i < nav_bar_elements.length; i++)
         {
-            nav_bar_elements[i].style.textShadow="0 0px 10px #000";
             nav_bar_elements[i].classList.add('nav-element-visible');
+            if (nav_bar_elements[i].getAttribute('status') == "active")
+            {
+               nav_bar_elements[i].classList.add('nav-element-active');
+            }
         }
 	}
 }

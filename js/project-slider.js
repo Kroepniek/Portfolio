@@ -1,4 +1,5 @@
 var projectTimeline = $('#project-timeline');
+var projectSliderLangsContent = $('#project-slider-langs-content');
 var projectSliderYearsContent = $('#project-slider-years-content');
 var projectSlider = $('#project-slider');
 var projectSliderBalls = $('#project-slider-balls');
@@ -9,17 +10,134 @@ var projectSliderProjectDesc = $('#project-slider-info-desc');
 var projectSliderProjectShowButton = $('#project-slider-show-button');
 var projectSliderProjectShowButtonLink = $('#project-slider-show-button-link');
 
+var availableLangs = new Array();
+
 var projects = new Object();
 var currentSliderProjects = new Object();
 var currentProjectsYear = '';
 var currentProjectSlide = 0;
+var typeDisplay = CheckSize();
+var lang = "";
 
-var autoSliderInterval = setInterval(AutoSlider, 5000);
+var autoSliderInterval;
+
+function isEmpty(obj)
+{
+    for(var key in obj)
+    {
+        if(obj.hasOwnProperty(key))
+        {
+            return false;
+        }
+    }
+    return true;
+}
 
 function Init()
 {
-    CheckSize();
+    CheckAvailableLangs();
+    GetLang("getLang");
     GetFromDataBase("getProjects", "");
+}
+
+function CheckAvailableLangs()
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            if (this.responseText == "error")
+            {
+                alert("Server error, try later.");
+            }
+            else 
+            {
+                var response = JSON.parse(this.responseText);
+                var fixedResponse = new Array();
+                let langPerRow = new Array();
+
+                response.forEach(one_row => {
+                    let woord = "";
+                    for (let i = 0; i < one_row.length; i++)
+                    {
+                        if (i == one_row.length - 1)
+                        {
+                            woord += one_row.charAt(i);
+                            langPerRow.push(woord);
+                            woord = "";
+                        }
+                        else if (one_row.charAt(i) != ",")
+                        {
+                            woord += one_row.charAt(i);
+                        }
+                        else
+                        {
+                            langPerRow.push(woord);
+                            woord = "";
+                        }
+                    }
+                });
+
+                langPerRow.forEach(oneLang =>
+                {
+                    if (!fixedResponse.includes(oneLang))
+                    {
+                        fixedResponse.push(oneLang);
+                    }
+                });
+
+                availableLangs = fixedResponse;
+            }
+        }
+    };
+    xmlhttp.open("POST", "getFromDataBase.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("func=checkLangs");
+}
+
+function SetLang(requestFunction, language)
+{
+    let lng = language.toString().toUpperCase();
+    lang = lng;
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            if (this.responseText == "error")
+            {
+                alert("Server error, try later.");
+            }
+        }
+    };
+    xmlhttp.open("POST", "getFromDataBase.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("func=" + requestFunction + "&lang=" + lng);
+}
+
+function GetLang(requestFunction)
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            if (this.responseText == "error")
+            {
+                alert("Server error, try later.");
+            }
+            else
+            {
+                lang = this.responseText;
+                SetupLangs();
+            }
+        }
+    };
+    xmlhttp.open("POST", "getFromDataBase.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("func=" + requestFunction);
 }
 
 function GetFromDataBase(requestFunction, requestParameters)
@@ -32,6 +150,10 @@ function GetFromDataBase(requestFunction, requestParameters)
             if (this.responseText == "error")
             {
                 alert("Server error, try later.");
+            }
+            else if (this.responseText == "Nothing")
+            {
+                console.log("There are no projects found.");
             }
             else
             {
@@ -84,21 +206,27 @@ function GetFromDataBase(requestFunction, requestParameters)
     xmlhttp.send("func=" + requestFunction + "&" + requestParameters);
 }
 
-Object.prototype.isEmpty = function()
+function SetupLangs()
 {
-    for(var key in this)
+    projectSliderLangsContent.html('');
+
+    availableLangs.forEach(one_lang =>
     {
-        if(this.hasOwnProperty(key))
+        if (one_lang == lang)
         {
-            return false;
+            projectSliderLangsContent.append('<li class="project-slider-lang-active" onclick="ChangeLang(\'' + one_lang + '\')">' + one_lang + '</li>');
         }
-    }
-    return true;
+        else
+        {
+            projectSliderLangsContent.append('<li onclick="ChangeLang(\'' + one_lang + '\')">' + one_lang + '</li>');
+        }
+    });
 }
 
 function SetupYears()
 {
     var count = 0;
+    projectSliderYearsContent.html('');
 
     for (var project in projects)
     {
@@ -111,7 +239,15 @@ function SetupYears()
                 projectSliderYearsContent.append('<span class="project-slider-years-item project-slider-years-item-active">' + year + '</span>') 
                 currentSliderProjects = projects[project];
                 currentProjectsYear = project;
-                SetupSlider();
+
+                if (typeDisplay == "slider")
+                {
+                    PreSetupSlider();
+                }
+                else if (typeDisplay = "blocks")
+                {
+                    PreSetupBlocks();
+                }
             }
             else
             {
@@ -123,10 +259,21 @@ function SetupYears()
     }
 }
 
+function ChangeLang(newLang)
+{
+    projects = new Object();
+    currentSliderProjects = new Object();
+    currentProjectsYear = '';
+    currentProjectSlide = 0;
+    SetLang("setLang", newLang);
+    Init();
+    WindowResized();
+    projectSliderYearsContent.html('');
+}
+
 function ChangeYear(clickedSpanObject, newYear)
 {
     let span = document.getElementById('project-slider-years-content');
-    let balls = document.getElementById('project-slider-balls');
 
     for (let s = 0; s < span.children.length; s++)
     {
@@ -145,7 +292,20 @@ function ChangeYear(clickedSpanObject, newYear)
             {
                 currentSliderProjects = projects[project];
                 currentProjectsYear = newYear;
-                SetupSlider();
+
+                if (typeDisplay == "slider")
+                {
+                    PreSetupSlider();
+                }
+                else if (typeDisplay = "blocks")
+                {
+                    FadeOut();
+                    setTimeout(() => {
+                        projectSlider.html('');
+                        PreSetupBlocks();
+                    }, 500);
+                    
+                }
             }
         }
     }
@@ -153,8 +313,49 @@ function ChangeYear(clickedSpanObject, newYear)
 
 //#region 1920 orange
 
+function PreSetupSlider()
+{
+    if (projectSliderProjectPhoto)
+    {
+        projectSliderGradient.css("background-color", "#000000");
+        projectSliderProjectTitle.css("color", "#000000");
+        projectSliderProjectDesc.css("color", "#000000");
+        projectSliderProjectShowButton.css("color", "#000000");
+        projectSliderProjectShowButton.css("background-color", "#000000");
+
+        setTimeout(() =>
+        {
+            SetupSlider();
+        }, 250);
+    }
+    else
+    {
+        SetupSlider();
+    }
+}
+
 function SetupSlider()
 {
+    let slider = 
+    '<img src="" alt="project" id="project-slider-item">' +
+    '<img src="images/slider-gradient.png" alt="gradient" id="project-slider-gradient">' +
+    '<div id="project-slider-balls"></div>' +
+    '<div id="project-slider-info">' +
+    '<h3 id="project-slider-info-title">Title</h3>' +
+    '<span id="project-slider-info-desc">Desc</span>' +
+    '<a href="" id="project-slider-show-button-link"><div id="project-slider-show-button">Show website</div></a>' +
+    '</div>';
+    
+    projectSlider.html(slider);
+
+    projectSliderBalls = $('#project-slider-balls');
+    projectSliderGradient = $('#project-slider-gradient');
+    projectSliderProjectPhoto = $('#project-slider-item');
+    projectSliderProjectTitle = $('#project-slider-info-title');
+    projectSliderProjectDesc = $('#project-slider-info-desc');
+    projectSliderProjectShowButton = $('#project-slider-show-button');
+    projectSliderProjectShowButtonLink = $('#project-slider-show-button-link');
+    
     projectSliderBalls.html('');
     let balls = document.getElementById('project-slider-balls');
 
@@ -263,7 +464,58 @@ function AutoSlider()
 
 //#region <1920 darkorange
 
+function PreSetupBlocks()
+{
+    if ($(".row")[0])
+    {
+        FadeOut();
+        setTimeout(() =>
+        {
+            SetupBlocks();
+        }, 350);
+    }
+    else
+    {
+        SetupBlocks();
+    }
+    
+}
 
+function SetupBlocks()
+{
+    projectSlider.html('<div class="row">');
+    let rows = $(".row");
+    let addedBlocks = 0;
+
+    for (let i = 0; i < currentSliderProjects.length; i++)
+    {
+        let newBlock = '<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-3"><div class="project-block project-block-opacity-0 project-block-fade-in"><h3 class="project-block-title">' + currentSliderProjects[i]['PROJECT_TITLE'] + '</h3>' +
+                    '<span class="project-block-desc">' + currentSliderProjects[i]['PROJECT_DESC_NL'] + '</span><a href="' + currentSliderProjects[i]['PROJECT_URL'] + '" class="project-block-show-button-link">' +
+                    '<div class="project-block-show-button">Show website</div></a></div></div>';
+        rows.append(newBlock);
+        addedBlocks++;
+    }
+    projectSlider.append('</div>');
+
+    for(let j = 0; j < addedBlocks; j++)
+    {
+        let nextBlock = rows.children().eq(j).children().eq(0);
+        setTimeout(() => {
+            nextBlock.removeClass("project-block-opacity-0");
+            setTimeout(() => {
+                nextBlock.removeClass("project-block-fade-in");
+            }, 350 + j * 50);
+        }, 350 + j * 50);
+    }
+}
+
+function FadeOut()
+{
+    $(".project-block").each(function()
+    {
+        $(this).addClass("project-block-fade-out");
+    });
+}
 
 //#endregion
 
@@ -274,14 +526,34 @@ function CheckSize()
         projectSlider.css("display", "block");
         clearInterval(autoSliderInterval);
         autoSliderInterval = setInterval(AutoSlider, 5000);
+        return "slider";
     }
     else if (window.innerWidth < 1600)
     {
-        //projectSlider.css("display", "none");
         clearInterval(autoSliderInterval);
+        return "blocks";
     }
 }
 
-$(window).resize(CheckSize);
+function WindowResized()
+{
+    let count = 0;
+
+    for(var prop in projects)
+    {
+        if(projects.hasOwnProperty(prop))
+        {
+            count++;
+        }
+    }
+
+    if (count > 0)
+    {
+        typeDisplay = CheckSize();
+        SetupYears();
+    }
+}
+
+$(window).resize(WindowResized);
 
 Init();

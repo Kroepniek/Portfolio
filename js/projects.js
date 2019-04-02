@@ -43,7 +43,7 @@ var projects = [];
 function Init()
 {
     projects[0] = new project(projects_fields[0], "project-Q-hover", "project-button-Q", "HTML", "html", 7); //Q
-    projects[1] = new project(projects_fields[1], "project-T-hover", "project-button-T", "C#", "csharp", 9); //T
+    projects[1] = new project(projects_fields[1], "project-T-hover", "project-button-T", "C#", "c#", 9); //T
     projects[2] = new project(projects_fields[2], "project-S-hover", "project-button-S", "CSS", "css", 9); //S
     projects[3] = new project(projects_fields[3], "project-I-hover", "project-button-I", "Arduino", "arduino", 7); //I
     projects[4] = new project(projects_fields[4], "project-J-hover", "project-button-J", "SQL", "sql", 7); //J
@@ -104,9 +104,30 @@ function ChangeHover(tetris_block_IDs, hoverState, colorclass, buttonclass)
     });
 }
 
+function SetLang(requestFunction, language)
+{
+    let lang = language.toString().toUpperCase();
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            if (this.responseText == "error")
+            {
+                alert("Server error, try later.");
+            }
+        }
+    };
+    xmlhttp.open("POST", "projects/getFromDataBase.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("func=" + requestFunction + "&lang=" + lang);
+}
+
 function Go(web)
 {
-    window.location.href = "projects/projects.php?filter=" + web;
+    SetLang("setLang", web);
+    window.location.href = "projects/projects.php";
 }
 
 tetris_blocks.forEach(tetris_block_ID => {

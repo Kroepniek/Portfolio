@@ -16,39 +16,22 @@
 </head>
 <body>
 	<nav id="nav">
-		<a href="../#"><div class="nav-element"><i class="icon-home"></i> <span class="nav-text">Home</span></div></a>
-		<a href="?filter=all"><div class="nav-element"><i class="icon-code-1"></i> <span class="nav-text">Projects</span></div></a>
-		<a href="../#contact"><div class="nav-element"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
+		<a href="../#"><div class="nav-element" status="unactive"><i class="icon-home"></i> <span class="nav-text">Home</span></div></a>
+		<a href="" onclick="return false;"><div class="nav-element" status="active" onclick="ChangeLang('ALL')"><i class="icon-code-1"></i> <span class="nav-text">Projects</span></div></a>
+		<a href="../#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
 		<div class="nav-element-input"><input type="text" name="cmd" autocomplete="off"></div>
 	</nav>
 	<script type="text/javascript" src="../js/nav.js"></script>
 	<div id="container">
 		<div id="project-timeline">
+			<div id="project-slider-langs">
+				<ul id="project-slider-langs-content">
+				</ul>
+			</div>
 			<div id="project-slider-years">
 				<div id="project-slider-years-content"></div>
 			</div>
-			<div id="project-slider">
-				<!-- <img src="images/blank.png" alt="project" id="project-slider-item">
-				<img src="images/slider-gradient.png" alt="gradient" id="project-slider-gradient">
-				<div id="project-slider-balls"></div>
-				<div id="project-slider-info">
-					<h3 id="project-slider-info-title"></h3>
-					<span id="project-slider-info-desc"></span>
-					<a href="" id="project-slider-show-button-link"><div id="project-slider-show-button">Show website</div></a>
-				</div> -->
-				<!-- Uncomment for slider -->
-				<div class="row project-row-height">
-					<div class="col-sm-3 p-5">
-						<div class="project-block">Hejka</div>
-					</div>
-					<div class="col-sm-3 p-5">
-						<div class="project-block">Hejka</div>
-					</div>
-					<div class="col-sm-3 p-5">
-						<div class="project-block">Hejka</div>
-					</div>
-				</div>
-			</div>
+			<div id="project-slider"></div>
 		</div>
 		<script type="text/javascript" src="../js/project-slider.js"></script>
 		<a id="back-to-top"><i class="icon-up-open"></i></a>

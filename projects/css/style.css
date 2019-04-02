@@ -24,7 +24,7 @@ body
 
 footer
 {
-    width: calc(100% - 30px);
+    width: 100%;
     height: 30px;
     background-image: linear-gradient(#FFFFFF00 20%, #ffffff44 80%);
     text-align: right;
@@ -37,18 +37,18 @@ footer
 #back-to-top
 {
     text-decoration: none;
-    color: #fff;
+    color: #FFA17F;
     width: 80px;
     height: 80px;
     border-radius: 40px;
     position: fixed;
     top: 86%;
     right: 2%;
-    text-shadow: 0 0 10px #fff;
+    text-shadow: 0 0 20px #fff;
     transition-duration: 1000ms;
     opacity: 0;
     text-align: center;
-    font-size: 4vh;
+    font-size: calc(30px + 0.5vw);
     line-height: 70px;
 }
 
@@ -75,7 +75,13 @@ nav a
     line-height: 30px;
     color: #fff;
     font-weight: bold;
-    font-size: 1.8vh;
+    font-size: calc(5px + 0.5vw);
+}
+
+nav a:hover
+{
+    text-decoration: none;
+    color: #fff;
 }
 
 nav a:first-of-type
@@ -86,6 +92,7 @@ nav a:first-of-type
 .nav-text
 {
     visibility: visible;
+    transition-duration: 300ms;
 }
 
 .nav-element
@@ -93,9 +100,31 @@ nav a:first-of-type
     height: 30px;
     width: 100px;
     display: inline-block;
-    transition-duration: 600ms;
+    transition-duration: 300ms;
     text-shadow: 0 0px 0px #fff;
     cursor: default;
+}
+
+.nav-element-visible
+{
+    height: 30px;
+    width: 100px;
+    display: inline-block;
+    transition-duration: 300ms;
+    text-shadow: 0 0px 10px #000;
+    cursor: default;
+}
+
+.nav-element-active
+{
+    color: #454545;
+}
+
+.nav-element-visible:hover
+{
+    background-color: #FFA17F;
+    color: #FFF;
+    cursor: pointer;
 }
 
 .nav-element-input
@@ -130,12 +159,6 @@ nav a:first-of-type
     outline: none;
 }
 
-.nav-element-visible:hover
-{
-    background-color: #FFA17F;
-    cursor: pointer;
-}
-
 /*#endregion Nav*/
 
 #project-timeline
@@ -147,11 +170,78 @@ nav a:first-of-type
     margin: 100px auto 0 auto;
 }
 
+#project-slider-langs
+{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 60px;
+}
+
+#project-slider-langs ul
+{
+    position: relative;
+    top: calc(27% - 10px);
+    min-width: 100px;
+    min-height: 46%;
+    margin: auto;
+    background-color: #FFFFFF;
+    cursor: default;
+    list-style-type: none;
+    padding: 0;
+}
+
+#project-slider-langs ul li
+{
+    display: inline-block;
+    font-size: calc(10px + 0.8vw);
+    line-height: 60px;
+    color: #454545;
+    margin-right: 30px;
+    transition: color 150ms ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#project-slider-langs ul li:last-child
+{
+    display: inline-block;
+    font-size: calc(10px + 0.8vw);
+    line-height: 60px;
+    color: #454545;
+    margin-right: 0px;
+    transition: color 150ms ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#project-slider-langs ul li:hover
+{
+    color: #FFA17F;
+    cursor: pointer;
+}
+
+#project-slider-langs ul .project-slider-lang-active
+{
+    color: #FFA17F;
+    text-decoration: underline;
+}
+
+#project-slider-langs ul .project-slider-lang-active:last-child
+{
+    color: #FFA17F;
+    text-decoration: underline;
+}
+
 #project-slider-years
 {
     background-color: #FFFFFF;
     width: 100%;
     height: 100px;
+    margin-bottom: 25px;
 }
 
 #project-slider-years-content
@@ -167,7 +257,7 @@ nav a:first-of-type
 
 .project-slider-years-item
 {
-    font-size: calc(10px + 2vw);
+    font-size: calc(30px + 0.8vw);
     color: #454545;
     margin-right: 30px;
     transition: color 150ms ease-in-out;
@@ -179,7 +269,7 @@ nav a:first-of-type
 
 .project-slider-years-item:last-child
 {
-    font-size: calc(10px + 2vw);
+    font-size: calc(30px + 0.8vw);
     color: #454545;
     margin-right: 0px;
 }
@@ -209,6 +299,7 @@ nav a:first-of-type
     width: 100%;
     height: 600px;
     filter: drop-shadow(0 0 50px #000);
+    overflow: hidden;
 }
 
 /*#region 1920 Slider*/
@@ -344,17 +435,74 @@ nav a:first-of-type
 
 /*#region <1920 Slider*/
 
-.project-row-height
-{
-    height: 300px;
-}
-
 .project-block
 {
     width: 100%;
-    height: 100%;
-    background-color: #000000;
+    height: 300px;
+    background-image: linear-gradient(#FFA17F, #000 65%);
     color: #FFFFFF;
+}
+
+.project-block-fade-out
+{
+    transition-duration: 350ms;
+    opacity: 0;
+}
+
+.project-block-fade-in
+{
+    transition-duration: 350ms;
+}
+
+.project-block-opacity-0
+{
+    opacity: 0;
+}
+
+.project-block-title
+{
+    padding-top: 35px;
+}
+
+.project-block-show-button
+{
+    margin: 10px auto 0 auto;
+    color: #FFFFFF;
+    font-size: 28px;
+    width: 80%;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 5px;
+    background-color: #FFA17F;
+    box-shadow: inset 0 0 5px #000000;
+    transition-duration: 250ms;
+    text-decoration: none;
+}
+
+.project-block-desc
+{
+    display: block;
+    height: 40%;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.project-block-show-button:hover
+{
+    box-shadow: inset 0 0 15px #000000;
+    cursor: pointer;
+}
+
+.project-block-show-button-link
+{
+    text-decoration: none;
+
+}
+
+.project-block-show-button-link:hover
+{
+    text-decoration: none;
 }
 
 /*#endregion*/
@@ -376,7 +524,7 @@ nav a:first-of-type
 
     .nav-text
     {
-      visibility: hidden;
+        visibility: hidden;
     }
 
     .nav-element
@@ -384,8 +532,18 @@ nav a:first-of-type
         height: 30px;
         width: 30px;
         display: inline-block;
-        transition-duration: 600ms;
+        transition-duration: 300ms;
         text-shadow: 0 0px 0px #fff;
+        cursor: default;
+    }
+
+    .nav-element-visible
+    {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        transition-duration: 300ms;
+        text-shadow: 0 0px 10px #000;
         cursor: default;
     }
     /*#endregion Nav*/
@@ -398,7 +556,13 @@ nav a:first-of-type
 
 @media screen and (max-width: 991.98px)
 {
-
+    .project-block
+    {
+        width: 100%;
+        height: 260px;
+        background-image: linear-gradient(#FFA17F, #000 65%);
+        color: #FFFFFF;
+    }
 }
 
 @media screen and (max-width: 1199.98px)

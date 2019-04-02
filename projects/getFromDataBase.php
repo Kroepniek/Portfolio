@@ -1,7 +1,11 @@
 <?php
+    session_start();
+
     if (isset($_POST['func']))
     {
         require "../connect.php";
+
+        $lang = $_SESSION['LANG'];
 
         if ($con->connect_error) 
         {
@@ -14,6 +18,12 @@
             $return = array();
 
             $sql = "SELECT * FROM projects";
+
+            if ($lang != "ALL")
+            {
+                $sql = "SELECT * FROM projects WHERE PROJECT_LANG LIKE '%$lang%'";
+            }
+
             $result = $con->query($sql);
             
             if ($result->num_rows > 0)
@@ -33,13 +43,48 @@
 
                     array_push($return, $tempArray);
                 }
+
+                echo json_encode($return);
+            }
+            else
+            {
+                echo "Nothing";
+            }
+        }
+        else if ($_POST['func'] == "checkLangs")
+        {
+            $return = array();
+
+            $sql = "SELECT PROJECT_LANG FROM projects";
+
+            $result = $con->query($sql);
+            
+            if ($result->num_rows > 0)
+            {
+                while ($row = $result->fetch_assoc())
+                {
+                    $project_lang = $row["PROJECT_LANG"];
+
+                    array_push($return, $project_lang);
+                }
+
+                echo json_encode($return);
+            }
+        }
+        else if ($_POST['func'] == "setLang")
+        {
+            $_SESSION['LANG'] = $_POST['lang'];
+        }
+        else if ($_POST['func'] == "getLang")
+        {
+            if (isset($_SESSION['LANG']))
+            {
+                echo $_SESSION['LANG'];
             }
             else
             {
                 echo "error";
             }
-
-            echo json_encode($return);
         }
     }
 ?>
