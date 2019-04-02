@@ -347,6 +347,8 @@ function SetupSlider()
     '</div>';
     
     projectSlider.html(slider);
+    projectSlider.toggleClass('project-slider-small', true);
+    projectSlider.toggleClass('project-slider-auto', false);
 
     projectSliderBalls = $('#project-slider-balls');
     projectSliderGradient = $('#project-slider-gradient');
@@ -484,6 +486,9 @@ function PreSetupBlocks()
 function SetupBlocks()
 {
     projectSlider.html('<div class="row">');
+    projectSlider.toggleClass('project-slider-small', false);
+    projectSlider.toggleClass('project-slider-auto', true);
+    
     let rows = $(".row");
     let addedBlocks = 0;
 
