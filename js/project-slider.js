@@ -21,6 +21,8 @@ var lang = "";
 
 var autoSliderInterval;
 
+var language = "";
+
 function isEmpty(obj)
 {
     for(var key in obj)
@@ -31,6 +33,29 @@ function isEmpty(obj)
         }
     }
     return true;
+}
+
+function GetLanguage(requestFunction)
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            if (this.responseText == "error")
+            {
+                alert("Server error, try later.");
+            }
+            else
+            {
+                language = this.responseText;
+                Init();
+            }
+        }
+    };
+    xmlhttp.open("POST", "../../lang.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("func=" + requestFunction);
 }
 
 function Init()
@@ -96,9 +121,9 @@ function CheckAvailableLangs()
     xmlhttp.send("func=checkLangs");
 }
 
-function SetLang(requestFunction, language)
+function SetLang(requestFunction, langg)
 {
-    let lng = language.toString().toUpperCase();
+    let lng = langg.toString().toUpperCase();
     lang = lng;
 
     var xmlhttp = new XMLHttpRequest();
@@ -343,7 +368,7 @@ function SetupSlider()
     '<div id="project-slider-info">' +
     '<h3 id="project-slider-info-title">Title</h3>' +
     '<span id="project-slider-info-desc">Desc</span>' +
-    '<a href="" id="project-slider-show-button-link"><div id="project-slider-show-button">Show website</div></a>' +
+    '<a href="" id="project-slider-show-button-link"><div id="project-slider-show-button">' + (language == "en" ? 'Show website' : (language == "nl" ? 'Show website' : 'Pokaż strone')) + '</div></a>' +
     '</div>';
     
     projectSlider.html(slider);
@@ -435,7 +460,7 @@ function SetSlide(slideIndex, delay)
     setTimeout(() => {
         projectSliderProjectPhoto.attr('src', "images/" + currentSliderProjects[slideIndex]['PROJECT_IMG']);
         projectSliderProjectTitle.html(currentSliderProjects[slideIndex]['PROJECT_TITLE']);
-        projectSliderProjectDesc.html(currentSliderProjects[slideIndex]['PROJECT_DESC_NL']);
+        projectSliderProjectDesc.html(currentSliderProjects[slideIndex]['PROJECT_DESC_' + language.toUpperCase()]);
         projectSliderProjectShowButtonLink.attr('href', currentSliderProjects[slideIndex]['PROJECT_URL'] + "/index.php");
 
         let descHeight = projectSliderProjectDesc.height();
@@ -496,7 +521,7 @@ function SetupBlocks()
     {
         let newBlock = '<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-3"><div class="project-block project-block-opacity-0 project-block-fade-in"><h3 class="project-block-title">' + currentSliderProjects[i]['PROJECT_TITLE'] + '</h3>' +
                     '<span class="project-block-desc">' + currentSliderProjects[i]['PROJECT_DESC_NL'] + '</span><a href="' + currentSliderProjects[i]['PROJECT_URL'] + '" class="project-block-show-button-link">' +
-                    '<div class="project-block-show-button">Show website</div></a></div></div>';
+                    '<div class="project-block-show-button">' + (language == "en" ? 'Show website' : (language == "nl" ? 'Show website' : 'Pokaż strone')) + '</div></a></div></div>';
         rows.append(newBlock);
         addedBlocks++;
     }
@@ -561,4 +586,4 @@ function WindowResized()
 
 $(window).resize(WindowResized);
 
-Init();
+GetLanguage("getLang");

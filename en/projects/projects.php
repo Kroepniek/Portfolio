@@ -4,9 +4,9 @@
 	<meta charset="utf-8" />
 	<meta name="description" content="Portfolio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="../images/transparent_kon.png">
+	<link rel="icon" href="../../images/transparent_kon.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="../../css/fontello.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Daniel Mondzielewski - Projects</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@
 		<a href="../#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
 		<div class="nav-element-input"><input type="text" name="cmd" autocomplete="off"></div>
 	</nav>
-	<script type="text/javascript" src="../js/nav.js"></script>
+	<script type="text/javascript" src="../../js/nav.js"></script>
 	<div id="container">
 		<div id="project-timeline">
 			<div id="project-slider-langs">
@@ -33,9 +33,9 @@
 			</div>
 			<div id="project-slider"></div>
 		</div>
-		<script type="text/javascript" src="../js/project-slider.js"></script>
+		<script type="text/javascript" src="../../js/project-slider.js"></script>
 		<a id="back-to-top"><i class="icon-up-open"></i></a>
-		<script type="text/javascript" src="../js/scroll.js"></script>
+		<script type="text/javascript" src="../../js/scroll.js"></script>
 	</div>
 	<?php require "../footer.php"; ?>
 </body>

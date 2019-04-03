@@ -29,7 +29,7 @@ function SendRequest(prmtr, value, func)
             status = "false";
         }
     };
-    xmlhttp.open("POST", "getPass.php", true);
+    xmlhttp.open("POST", "../getPass.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(prmtr + "=" + value);
 }

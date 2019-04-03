@@ -22,6 +22,8 @@ var projects_fields = [
     [ "project_2x6", "project_3x6", "project_3x7", "project_4x7" ]  //10Z
 ];
 
+var language = "";
+
 class project
 {
     constructor(fields, colorclass, buttonclass, titel, web, amount)
@@ -39,6 +41,29 @@ class project
 }
 
 var projects = [];
+
+function GetLanguage(requestFunction)
+{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
+            if (this.responseText == "error")
+            {
+                alert("Server error, try later.");
+            }
+            else
+            {
+                language = this.responseText;
+                Init();
+            }
+        }
+    };
+    xmlhttp.open("POST", "../lang.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("func=" + requestFunction);
+}
 
 function Init()
 {
@@ -136,4 +161,4 @@ tetris_blocks.forEach(tetris_block_ID => {
     tetris_block.addEventListener("mouseout", function(){CheckWhichBlock(tetris_block.id, false);});
 });
 
-window.onload = Init;
+GetLanguage("getLang");
