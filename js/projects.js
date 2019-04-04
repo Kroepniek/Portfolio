@@ -144,7 +144,7 @@ function SetLang(requestFunction, language)
             }
         }
     };
-    xmlhttp.open("POST", "projects/getFromDataBase.php", true);
+    xmlhttp.open("POST", "../getFromDataBase.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("func=" + requestFunction + "&lang=" + lang);
 }

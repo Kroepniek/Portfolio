@@ -3,7 +3,7 @@
 
     if (isset($_POST['func']))
     {
-        require "../../connect.php";
+        require "connect.php";
 
         $lang = $_SESSION['LANG'];
 

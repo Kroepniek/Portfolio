@@ -5,7 +5,7 @@
 	<meta name="description" content="Portfolio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="../../images/transparent_kon.png">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style-projects.css">
 	<link rel="stylesheet" type="text/css" href="../../css/fontello.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Daniel Mondzielewski - Projects</title>
@@ -36,6 +36,7 @@
 		<script type="text/javascript" src="../../js/project-slider.js"></script>
 		<a id="back-to-top"><i class="icon-up-open"></i></a>
 		<script type="text/javascript" src="../../js/scroll.js"></script>
+		<script type="text/javascript" src="../../js/cms.js"></script>
 	</div>
 	<?php require "../footer.php"; ?>
 </body>

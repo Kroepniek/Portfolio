@@ -116,7 +116,7 @@ function CheckAvailableLangs()
             }
         }
     };
-    xmlhttp.open("POST", "getFromDataBase.php", true);
+    xmlhttp.open("POST", "../../getFromDataBase.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("func=checkLangs");
 }
@@ -137,7 +137,7 @@ function SetLang(requestFunction, langg)
             }
         }
     };
-    xmlhttp.open("POST", "getFromDataBase.php", true);
+    xmlhttp.open("POST", "../../getFromDataBase.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("func=" + requestFunction + "&lang=" + lng);
 }
@@ -160,7 +160,7 @@ function GetLang(requestFunction)
             }
         }
     };
-    xmlhttp.open("POST", "getFromDataBase.php", true);
+    xmlhttp.open("POST", "../../getFromDataBase.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("func=" + requestFunction);
 }
@@ -226,7 +226,7 @@ function GetFromDataBase(requestFunction, requestParameters)
             }
         }
     };
-    xmlhttp.open("POST", "getFromDataBase.php", true);
+    xmlhttp.open("POST", "../../getFromDataBase.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("func=" + requestFunction + "&" + requestParameters);
 }
@@ -363,7 +363,7 @@ function SetupSlider()
 {
     let slider = 
     '<img src="" alt="project" id="project-slider-item">' +
-    '<img src="images/slider-gradient.png" alt="gradient" id="project-slider-gradient">' +
+    '<img src="../../images/slider-gradient.png" alt="gradient" id="project-slider-gradient">' +
     '<div id="project-slider-balls"></div>' +
     '<div id="project-slider-info">' +
     '<h3 id="project-slider-info-title">Title</h3>' +
@@ -458,7 +458,7 @@ function SetSlide(slideIndex, delay)
     projectSliderProjectShowButton.css("background-color", "#000000");
     
     setTimeout(() => {
-        projectSliderProjectPhoto.attr('src', "images/" + currentSliderProjects[slideIndex]['PROJECT_IMG']);
+        projectSliderProjectPhoto.attr('src', "../../images/" + currentSliderProjects[slideIndex]['PROJECT_IMG']);
         projectSliderProjectTitle.html(currentSliderProjects[slideIndex]['PROJECT_TITLE']);
         projectSliderProjectDesc.html(currentSliderProjects[slideIndex]['PROJECT_DESC_' + language.toUpperCase()]);
         projectSliderProjectShowButtonLink.attr('href', currentSliderProjects[slideIndex]['PROJECT_URL'] + "/index.php");
