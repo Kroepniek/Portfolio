@@ -44,7 +44,7 @@ function GetLanguage(requestFunction)
         {
             if (this.responseText == "error")
             {
-                alert("Server error, try later.");
+                alert("Server error, try later...");
             }
             else
             {

@@ -29,7 +29,7 @@ function SendRequest(prmtr, value, func)
             status = "false";
         }
     };
-    xmlhttp.open("POST", "../getPass.php", true);
+    xmlhttp.open("POST", "../../getPass.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(prmtr + "=" + value);
 }
@@ -61,6 +61,7 @@ function CheckKeys(e)
         else if (cmd == "69887384")
         {
             SendRequest("adm", "false", function(){console.log("Logged out successfully.");});
+            CheckAdminState("../../getPass.php")
         }
 
         cmd = "";
@@ -78,6 +79,7 @@ function CheckPass()
         if (writenPass == pass)
         {
             SendRequest("adm", "true", function(){console.log("Logged in successfully.");});
+            CheckAdminState("../../getPass.php");
         }
         else
         {
@@ -91,3 +93,4 @@ function CheckPass()
 }
 
 window.addEventListener('keydown', CheckKeys, false);
+window.onload = CheckAdminState("../../getPass.php");

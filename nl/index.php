@@ -12,19 +12,17 @@
 <body>
 	<nav id="nav">
 		<a href="#"><div class="nav-element" status="active"><i class="icon-home"></i> <span class="nav-text">Home</span></div></a>
-		<a href="#projects"><div class="nav-element" status="unactive"><i class="icon-code-1"></i> <span class="nav-text">Projects</span></div></a>
+		<a href="#projects"><div class="nav-element" status="unactive"><i class="icon-code-1"></i> <span class="nav-text">Projecten</span></div></a>
 		<a href="#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
-		<div class="nav-element-input"><input type="text" name="cmd" autocomplete="off"></div>
 	</nav>
 	<script type="text/javascript" src="../js/nav.js"></script>
-	<script type="text/javascript" src="../js/cmd.js"></script>
 	<div id="container">
 		<div id="name">
 			<span>Daniel Mondzielewski</span>
 		</div>
 		<script type="text/javascript" src="../js/name.js"></script>
 		<div class="section" id="projects">
-			<div class="section-header"><p><span class="section-text"><i class="icon-code-1"></i> Projects</span></p></div>
+			<div class="section-header"><p><span class="section-text"><i class="icon-code-1"></i> Projecten</span></p></div>
 			<div id="project-list">
 				<div class="content">
 					<div class="project" id="project_0x0"><div class="project-text-content"></div></div>
@@ -74,11 +72,11 @@
 		<div class="section" id="contact">
 			<div class="section-header"><p><span class="section-text"><i class="icon-mail-alt"></i> Contact</span></p></div>
 			<form action="" method="post" name="contact">
-				<input type="text" name="name" placeholder="Name">
+				<input type="text" name="name" placeholder="Naam">
 				<input type="email" name="email" placeholder="E-mail">
-				<input type="text" name="title" placeholder="Title">
-				<textarea name="msg" rows="10" cols="50" placeholder="Message..."></textarea>
-				<input type="submit" class="contact-form-button" value="Send" name="submit">
+				<input type="text" name="title" placeholder="Titel">
+				<textarea name="msg" rows="10" cols="50" placeholder="Bericht..."></textarea>
+				<input type="submit" class="contact-form-button" value="Verzenden" name="submit">
 			</form> 
 		</div>
 	</div>
