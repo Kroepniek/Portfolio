@@ -1,0 +1,286 @@
+::-webkit-scrollbar { width: 5px; background-color: #000; }
+::-webkit-scrollbar-thumb { background: #FFFFFF; }
+::-webkit-scrollbar-thumb:hover { background: #EFEFEF; }
+html { scroll-behavior: smooth; }  
+
+body
+{
+    background-image: linear-gradient(#ffffff 90%, #FFA17F);
+    background-repeat: no-repeat;
+    margin: 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#container
+{
+    position: relative;
+    display: block;
+    margin: auto;
+    height: 6000px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer
+{
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(#FFFFFF00 20%, #ffffff44 80%);
+    text-align: right;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+#back-to-top
+{
+    text-decoration: none;
+    color: #FFA17F;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    position: fixed;
+    top: 86%;
+    right: 2%;
+    text-shadow: 0 0 20px #fff;
+    transition-duration: 1000ms;
+    opacity: 0;
+    text-align: center;
+    font-size: calc(30px + 0.5vw);
+    line-height: 70px;
+}
+
+/*#region Nav*/
+
+nav
+{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    height: 30px;
+    width: 100%;
+    transition-duration: 600ms;
+    background-color: rgba(255,255,255,0.25);
+    box-shadow: 0 0 0px #fff;
+}
+
+nav a
+{
+    display: inline-flex;
+    position: relative;
+    margin-left: 5px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: calc(5px + 0.5vw);
+}
+
+nav a:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:first-of-type
+{
+    margin-left: 2vh;
+}
+
+.nav-text
+{
+    visibility: visible;
+}
+
+.nav-element
+{
+    height: 30px;
+    width: 100px;
+    display: inline-block;
+    transition-duration: 300ms;
+    text-shadow: 0 0px 0px #fff;
+    cursor: default;
+}
+
+.nav-element-visible
+{
+    height: 30px;
+    width: 100px;
+    display: inline-block;
+    transition-duration: 300ms;
+    text-shadow: 0 0px 10px #000;
+    cursor: default;
+}
+
+.nav-element-active
+{
+    color: #454545;
+}
+
+.nav-element-visible:hover
+{
+    background-color: #FFA17F;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.nav-element-input
+{
+    position: relative;
+    top: -5px;
+    height: 30px;
+    width: 1550px;
+    display: none;
+    transition-duration: 600ms;
+    cursor: default;
+    text-align: right;
+}
+
+.nav-element-input input[name="cmd"]
+{
+    height: 18px;
+    width: 200px;
+    display: inline-block;
+    transition-duration: 600ms;
+    cursor: default;
+    border: none;
+    outline: none;
+    text-align: right;
+    position: relative;
+    top: 4px;
+    right: 4px;
+}
+
+.nav-element-input input[type="text"]:hover
+{
+    outline: none;
+}
+
+/*#endregion Nav*/
+
+/*#region About Me*/
+
+#about-me-content
+{
+    background-color: #FFFFFF;
+}
+
+#about-me-first
+{
+    
+}
+
+#about-me-foto
+{
+
+}
+
+#about-me-skills
+{
+
+}
+
+#about-me-skills-content
+{
+
+}
+
+.about-me-skills-skill
+{
+    text-align: left;
+}
+
+.about-me-skills-skill-name
+{
+    
+}
+
+.about-me-skills-skill-progress
+{
+    background-color: #FFFFFF;
+    filter: drop-shadow(0 0 15px #454545);
+    border-radius: 12px;
+    max-height: 24px;
+}
+
+.about-me-skills-skill-progressbar
+{
+    background-color: #FFA17F;
+    border-radius: 12px;
+    height: 100%;
+    color: #FFFFFF;
+    padding-left: 10px;
+    text-align: left;
+}
+
+#about-me-second
+{
+
+}
+
+#about-me-content
+{
+
+}
+
+/*#endregion*/
+
+@media screen and (max-width: 575.98px) 
+{
+    /*#region Nav*/
+    nav a
+    {
+        position: relative;
+        margin-left: 5px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 2.4vh;
+    }
+
+    .nav-text
+    {
+        visibility: hidden;
+    }
+
+    .nav-element
+    {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        transition-duration: 300ms;
+        text-shadow: 0 0px 0px #fff;
+        cursor: default;
+    }
+
+    .nav-element-visible
+    {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        transition-duration: 300ms;
+        text-shadow: 0 0px 10px #000;
+        cursor: default;
+    }
+    /*#endregion Nav*/
+}
+
+@media screen and (max-width: 767.98px)
+{
+
+}
+
+@media screen and (max-width: 991.98px)
+{
+    
+}
+
+@media screen and (max-width: 1199.98px)
+{
+    
+}

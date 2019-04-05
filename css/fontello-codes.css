@@ -6,6 +6,7 @@
 .icon-right:before { content: '\e804'; } /* '' */
 .icon-code-1:before { content: '\e805'; } /* '' */
 .icon-terminal-1:before { content: '\e806'; } /* '' */
+.icon-user:before { content: '\e807'; } /* '' */
 .icon-spin6:before { content: '\e839'; } /* '' */
 .icon-gplus:before { content: '\f0d5'; } /* '' */
 .icon-mail-alt:before { content: '\f0e0'; } /* '' */
@@ -18,3 +19,4 @@
 .icon-toggle-on:before { content: '\f205'; } /* '' */
 .icon-microchip:before { content: '\f2db'; } /* '' */
 .icon-facebook-rect:before { content: '\f301'; } /* '' */
+.icon-linkedin:before { content: '\f318'; } /* '' */

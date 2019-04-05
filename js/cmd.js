@@ -61,7 +61,7 @@ function CheckKeys(e)
         else if (cmd == "69887384")
         {
             SendRequest("adm", "false", function(){console.log("Logged out successfully.");});
-            CheckAdminState("../../getPass.php")
+            CheckAdminState("../../getPass.php");
         }
 
         cmd = "";
@@ -78,8 +78,11 @@ function CheckPass()
     {
         if (writenPass == pass)
         {
-            SendRequest("adm", "true", function(){console.log("Logged in successfully.");});
-            CheckAdminState("../../getPass.php");
+            SendRequest("adm", "true", function()
+            {
+                console.log("Logged in successfully.");
+                CheckAdminState("../../getPass.php");
+            });
         }
         else
         {

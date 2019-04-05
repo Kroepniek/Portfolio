@@ -68,6 +68,7 @@ nav
 
 nav a
 {
+    display: inline-flex;
     position: relative;
     margin-left: 5px;
     text-decoration: none;

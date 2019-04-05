@@ -1,6 +1,21 @@
 /*
     Add class "cms" to an element you want to disable. The element will be removed and stored in a variable as
-    an object.
+    an object. 
+
+    When you want to check if you are logged in, just use CheckAdminState(php), where 'php' is the name of your php file.
+    Example: CheckAdminState("getPass.php");
+
+    And in the php file you need to look for session variables.
+    Example:
+
+    if (isset($_POST['chck']) && $_POST['chck'])
+    {
+        echo isset($_SESSION['isAdmin']) ? "true" : "false";
+    }
+    else
+    {
+        header('Location: index.php');
+    }
 
     If you set class cms to multiple elements next to each other, the result of showing can be weird, because
     of that each element is showing up based on it's next sibling. If there is no sibling, element will be
