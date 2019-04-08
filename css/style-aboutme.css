@@ -25,13 +25,33 @@ body
 footer
 {
     width: 100%;
-    height: 30px;
     background-image: linear-gradient(#FFFFFF00 20%, #ffffff44 80%);
-    text-align: right;
+    text-align: center;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
     padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+#footer-name
+{
+    margin: auto;
+}
+
+#footer-links a
+{
+    text-decoration: none;
+    color: #FFFFFF;
+    filter: drop-shadow(0 0 0px #FFFFFF);
+    transition-duration: 250ms;
+}
+
+#footer-links a:hover
+{
+    text-decoration: none;
+    color: #FFFFFF;
+    filter: drop-shadow(0 0 15px #FFFFFF);
 }
 
 #back-to-top
@@ -168,34 +188,15 @@ nav a:first-of-type
     background-color: #FFFFFF;
 }
 
-#about-me-first
-{
-    
-}
-
 #about-me-foto
 {
-
-}
-
-#about-me-skills
-{
-
-}
-
-#about-me-skills-content
-{
-
+    filter: drop-shadow(0 0 25px #454545);
+    border-radius: 50%;
 }
 
 .about-me-skills-skill
 {
     text-align: left;
-}
-
-.about-me-skills-skill-name
-{
-    
 }
 
 .about-me-skills-skill-progress
@@ -216,14 +217,15 @@ nav a:first-of-type
     text-align: left;
 }
 
-#about-me-second
-{
-
-}
-
 #about-me-content
 {
+    margin-top: 100px;
+    width: 75%;
+}
 
+#about-me-second-content
+{
+    font-size: 1vw;
 }
 
 /*#endregion*/
@@ -268,19 +270,4 @@ nav a:first-of-type
         cursor: default;
     }
     /*#endregion Nav*/
-}
-
-@media screen and (max-width: 767.98px)
-{
-
-}
-
-@media screen and (max-width: 991.98px)
-{
-    
-}
-
-@media screen and (max-width: 1199.98px)
-{
-    
 }

@@ -16,23 +16,46 @@ body
     position: relative;
     display: block;
     margin: auto;
-    height: 6000px;
+    height: auto;
     width: 100%;
     text-align: center;
     overflow: hidden;
+    padding-bottom: 100px;
 }
 
 footer
 {
     width: 100%;
-    height: 30px;
+    height: 100px;
     background-image: linear-gradient(#FFFFFF00 20%, #ffffff44 80%);
-    text-align: right;
+    text-align: center;
     color: #fff;
     font-size: 14px;
     font-weight: bold;
     padding-right: 30px;
+    padding-bottom: 10px;
 }
+
+#footer-name
+{
+    margin: auto;
+}
+
+#footer-links a
+{
+    text-decoration: none;
+    color: #FFFFFF;
+    filter: drop-shadow(0 0 0px #FFFFFF);
+    transition-duration: 250ms;
+}
+
+#footer-links a:hover
+{
+    text-decoration: none;
+    color: #FFFFFF;
+    filter: drop-shadow(0 0 15px #FFFFFF);
+}
+
 
 #back-to-top
 {

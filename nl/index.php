@@ -11,9 +11,10 @@
 </head>
 <body>
 	<nav id="nav">
-		<a href="#"><div class="nav-element" status="active"><i class="icon-home"></i> <span class="nav-text">Home</span></div></a>
-		<a href="#projects"><div class="nav-element" status="unactive"><i class="icon-code-1"></i> <span class="nav-text">Projecten</span></div></a>
+		<a href="#"><div class="nav-element" status="active"><i class="icon-home"></i> <span class="nav-text">Start</span></div></a>
+		<a href="#projects"><div class="nav-element" status="unactive"><i class="icon-code-1"></i> <span class="nav-text">Projekts</span></div></a>
 		<a href="#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
+		<a href="about.php"><div class="nav-element" status="unactive"><i class="icon-user"></i> <span class="nav-text">About me</span></div></a>
 	</nav>
 	<script type="text/javascript" src="../js/nav.js"></script>
 	<div id="container">
@@ -22,7 +23,7 @@
 		</div>
 		<script type="text/javascript" src="../js/name.js"></script>
 		<div class="section" id="projects">
-			<div class="section-header"><p><span class="section-text"><i class="icon-code-1"></i> Projecten</span></p></div>
+			<div class="section-header"><p><span class="section-text"><i class="icon-code-1"></i> Projects</span></p></div>
 			<div id="project-list">
 				<div class="content">
 					<div class="project" id="project_0x0"><div class="project-text-content"></div></div>
@@ -72,11 +73,11 @@
 		<div class="section" id="contact">
 			<div class="section-header"><p><span class="section-text"><i class="icon-mail-alt"></i> Contact</span></p></div>
 			<form action="" method="post" name="contact">
-				<input type="text" name="name" placeholder="Naam">
+				<input type="text" name="name" placeholder="Imię">
 				<input type="email" name="email" placeholder="E-mail">
-				<input type="text" name="title" placeholder="Titel">
-				<textarea name="msg" rows="10" cols="50" placeholder="Bericht..."></textarea>
-				<input type="submit" class="contact-form-button" value="Verzenden" name="submit">
+				<input type="text" name="title" placeholder="Tytuł">
+				<textarea name="msg" rows="10" cols="50" placeholder="Wiadomość..."></textarea>
+				<input type="submit" class="contact-form-button" value="Wyślij" name="submit">
 			</form> 
 		</div>
 	</div>

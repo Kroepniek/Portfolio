@@ -23,11 +23,11 @@
 	</nav>
 	<script type="text/javascript" src="../js/nav.js"></script>
 	<div id="container">
-		<div id="about-me-content" class="mt-5 mx-5 p-3">
+		<div id="about-me-content" class="mx-auto p-3">
 			<div class="row">
-				<div id="about-me-first" class="col-md-12 col-lg-6">
-					<div id="about-me-foto" class="col-md-12 col-lg-6 m-0 py-1 px-2">
-						<img src="../images/transparent_kon.png" alt="Daniel Mondzielewski">
+				<div class="about-me-first col-md-12 col-lg-6">
+					<div class="col-md-12 col-lg-6 m-0 py-1 px-2">
+						<img src="../images/foto_2448x2448.png" id="about-me-foto" width="200" height="200" alt="Daniel Mondzielewski">
 					</div>
 					<div id="about-me-skills" class="col-md-12 col-lg-6 m-0 py-1 px-2">
 						<div id="about-me-skills-content">
@@ -47,10 +47,22 @@
 					</div>
 					<script type="text/javascript" src="../js/skillprogress.js"></script>
 				</div>
-				<div id="about-me-second" class="col-md-12 col-lg-6">
-					<div id="about-me-content" class="col-md-12">
-						Dummy text
+				<div class="about-me-second col-md-12 col-lg-6 py-5">
+					<div class="row">
+						<div id="about-me-second-content" class="col-md-12">
+							<?php require_once "../getContent.php"; echo getReturn(1); ?>
+						</div>
 					</div>
+				</div>
+			</div>
+			<div class="row py-5">
+				<div class="about-me-first col-md-12 col-lg-6">
+					<?php require_once "../getContent.php"; echo getReturn(2); ?>
+				</div>
+				<div class="about-me-second col-md-12 col-lg-6">
+					<img src="../images/cert-csharp.jpg" alt="c# cert" height="200" class="col-5 py-1">
+					<img src="../images/cert-javascript.jpg" alt="js cert" height="200" class="col-5 py-1">
+					<img src="../images/cert-sql.jpg" alt="sql cert" height="200" class="col-5 py-1">
 				</div>
 			</div>
 		</div>

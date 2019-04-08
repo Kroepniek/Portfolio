@@ -510,11 +510,11 @@ function PreSetupBlocks()
 
 function SetupBlocks()
 {
-    projectSlider.html('<div class="row">');
+    projectSlider.html('<div class="row" id="slider-blocks-row">');
     projectSlider.toggleClass('project-slider-small', false);
     projectSlider.toggleClass('project-slider-auto', true);
     
-    let rows = $(".row");
+    let rows = $("#slider-blocks-row");
     let addedBlocks = 0;
 
     for (let i = 0; i < currentSliderProjects.length; i++)

@@ -19,6 +19,7 @@
 		<a href="../#"><div class="nav-element" status="unactive"><i class="icon-home"></i> <span class="nav-text">Start</span></div></a>
 		<a href="" onclick="return false;"><div class="nav-element" status="active" onclick="ChangeLang('ALL')"><i class="icon-code-1"></i> <span class="nav-text">Projekty</span></div></a>
 		<a href="../#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Kontakt</span></div></a>
+		<a href="about.php"><div class="nav-element" status="unactive"><i class="icon-user"></i> <span class="nav-text">O mnie</span></div></a>
 	</nav>
 	<script type="text/javascript" src="../../js/nav.js"></script>
 	<div id="container">

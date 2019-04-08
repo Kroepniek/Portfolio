@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/style-projects.css">
 	<link rel="stylesheet" type="text/css" href="../../css/fontello.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Daniel Mondzielewski - Projecten</title>
+	<title>Daniel Mondzielewski - Projekty</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -16,9 +16,10 @@
 </head>
 <body>
 	<nav id="nav">
-		<a href="../#"><div class="nav-element" status="unactive"><i class="icon-home"></i> <span class="nav-text">Home</span></div></a>
-		<a href="" onclick="return false;"><div class="nav-element" status="active" onclick="ChangeLang('ALL')"><i class="icon-code-1"></i> <span class="nav-text">Projecten</span></div></a>
-		<a href="../#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Contact</span></div></a>
+		<a href="../#"><div class="nav-element" status="unactive"><i class="icon-home"></i> <span class="nav-text">Start</span></div></a>
+		<a href="" onclick="return false;"><div class="nav-element" status="active" onclick="ChangeLang('ALL')"><i class="icon-code-1"></i> <span class="nav-text">Projekty</span></div></a>
+		<a href="../#contact"><div class="nav-element" status="unactive"><i class="icon-mail-alt"></i> <span class="nav-text">Kontakt</span></div></a>
+		<a href="about.php"><div class="nav-element" status="unactive"><i class="icon-user"></i> <span class="nav-text">O mnie</span></div></a>
 	</nav>
 	<script type="text/javascript" src="../../js/nav.js"></script>
 	<div id="container">
