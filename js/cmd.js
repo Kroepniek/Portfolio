@@ -63,7 +63,11 @@ function CheckKeys(e)
             SendRequest("adm", "false", function(){console.log("Logged out successfully.");});
             CheckAdminState("../../getPass.php");
         }
-
+        else if (cmd == "6568777378190807280")
+        {
+            window.location.href = "../admin.php";
+        }
+        
         cmd = "";
     }
     else

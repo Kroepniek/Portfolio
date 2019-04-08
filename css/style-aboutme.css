@@ -192,6 +192,7 @@ nav a:first-of-type
 {
     filter: drop-shadow(0 0 25px #454545);
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .about-me-skills-skill

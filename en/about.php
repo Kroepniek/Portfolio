@@ -50,14 +50,14 @@
 				<div class="about-me-second col-md-12 col-lg-6 py-5">
 					<div class="row">
 						<div id="about-me-second-content" class="col-md-12">
-							<?php require "../getContent.php"; ?>
+							<?php require_once "../getContent.php"; echo getReturn(1); ?>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row py-5">
 				<div class="about-me-first col-md-12 col-lg-6">
-					<?php require "../getContent.php"; ?>
+					<?php require_once "../getContent.php"; echo getReturn(2); ?>
 				</div>
 				<div class="about-me-second col-md-12 col-lg-6">
 					<img src="../images/cert-csharp.jpg" alt="c# cert" height="200" class="col-5 py-1">
