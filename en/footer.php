@@ -8,6 +8,7 @@
     echo '<div id="footer-links" class="col-sm-12 col-lg-6">';
     echo '<a href="https://www.linkedin.com/in/daniel-mondzielewski-9160b1176/" target="blank"><i class="icon-linkedin"></i></a> ';
     echo '<a href="https://github.com/Kroepniek?tab=repositories" target="blank"><i class="icon-git"></i></a> ';
+    echo '<a href="../images/CV_Daniel_Mondzielewski.docx" download><i class="icon-user"></i> Download CV</a> ';
     echo '</div></div>';
     echo '</footer>';
 ?>
